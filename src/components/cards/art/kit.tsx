@@ -23,22 +23,26 @@ export const RAINBOW = {
 
 export const line = { fill: "none", stroke: INK, strokeWidth: 2.4, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
 
+/**
+ * Paper grain: one small embossed-noise tile, rasterised once by the browser and shared by every
+ * card (a per-card SVG filter would be recomputed 78 times on the deck page).
+ */
+const GRAIN = `data:image/svg+xml,${encodeURIComponent(
+  "<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n' x='0' y='0' width='100%' height='100%'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' seed='7' stitchTiles='stitch'/><feDiffuseLighting lighting-color='#fff' surfaceScale='1.6'><feDistantLight azimuth='45' elevation='62'/></feDiffuseLighting></filter><rect width='240' height='240' filter='url(#n)'/></svg>",
+)}`;
+
 /** Card frame: paper ground with a subtle embossed texture, then the illustration, then the title. */
 export function CardSvg({ id, label, title, numeral, children }: { id: string; label: string; title: string; numeral?: string; children: ReactNode }) {
   const tex = `paper-${id}`;
   return (
     <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={label} className="block h-full w-full" preserveAspectRatio="xMidYMid slice">
       <defs>
-        <filter id={tex} x="0" y="0" width="100%" height="100%">
-          <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="7" result="noise" />
-          <feDiffuseLighting in="noise" lightingColor="#fff" surfaceScale="1.6" result="light">
-            <feDistantLight azimuth="45" elevation="62" />
-          </feDiffuseLighting>
-          <feComposite in="light" in2="SourceGraphic" operator="arithmetic" k1="1" k2="0" k3="0" k4="0" />
-        </filter>
+        <pattern id={tex} width="240" height="240" patternUnits="userSpaceOnUse">
+          <image href={GRAIN} width="240" height="240" />
+        </pattern>
       </defs>
       <rect width={W} height={H} fill={PAPER} />
-      <rect width={W} height={H} fill={PAPER} filter={`url(#${tex})`} opacity="0.55" style={{ mixBlendMode: "multiply" }} />
+      <rect width={W} height={H} fill={`url(#${tex})`} opacity="0.55" style={{ mixBlendMode: "multiply" }} />
       {numeral && (
         <text x={W / 2} y="78" textAnchor="middle" fill={INK} fontSize="22" letterSpacing="6" fontFamily="var(--font-display), sans-serif" fontWeight="500">
           {numeral}

@@ -1,6 +1,6 @@
-# tarot-card-repo — The Daily Arcana
+# tarot-card-repo — Inhale Exhale
 
-A mobile-first tarot companion for **daily reflection, thoughtful readings, learning all 78 cards and keeping a private journal**, in a Celestial Art Nouveau visual style. It's built for personal daily practice first, on the same architecture needed for a public multi-user launch.
+A mobile-first tarot companion for **daily reflection, thoughtful readings, learning all 78 cards and keeping a private journal**, with a night-sky, neon-accented look and an original line-art deck (cobalt figures, rainbow robes, golden rays). It's built for personal daily practice first, on the same architecture needed for a public multi-user launch.
 
 > Tarot is presented here as a symbolic, reflective practice — not a scientifically validated way to predict the future.
 
@@ -22,7 +22,7 @@ A mobile-first tarot companion for **daily reflection, thoughtful readings, lear
 
 1. **Supabase** isn't configured yet, so accounts, sync, sharing and account deletion are unavailable until you add credentials (see *Set up Supabase* below). Guest mode works now.
 2. **AI interpretations** need an `ANTHROPIC_API_KEY`. Without one, every reading uses the full reference interpretation, and the UI says AI is unavailable.
-3. **Artwork: 0 of 78 illustrations are finished.** Every card currently shows a labelled "Illustration in production" face. The complete specification, prompts and processing pipeline are ready; see [docs/illustration-spec.md](docs/illustration-spec.md#the-exact-remaining-artwork-step) for the exact remaining step.
+3. **Artwork:** all 78 cards are drawn as original SVG line art in `src/components/cards/art/` (see CLAUDE.md for how to edit or add cards). The older raster pipeline in `art/` and `scripts/art/` is kept for commissioned artwork.
 
 ## Quick start (local)
 

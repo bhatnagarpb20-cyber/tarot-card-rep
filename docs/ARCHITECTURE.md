@@ -1,6 +1,6 @@
 # Architecture
 
-The Daily Arcana is a single Next.js 15 (App Router) application written in TypeScript, styled with Tailwind CSS v4, and backed by Supabase (PostgreSQL + Auth). It deploys to Vercel as-is.
+Inhale Exhale (formerly The Daily Arcana) is a single Next.js 15 (App Router) application written in TypeScript, styled with Tailwind CSS v4, and backed by Supabase (PostgreSQL + Auth). It deploys to Vercel as-is.
 
 ```
 Browser ──► Next.js pages (React Server Components + client islands)
