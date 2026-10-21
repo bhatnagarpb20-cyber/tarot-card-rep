@@ -47,3 +47,9 @@ test-results/
 playwright-report/
 supabase/local-stack/.env.local-stack
 /.next-*/
+
+# Teaser render outputs
+marketing/story-teaser/frames/
+marketing/story-teaser/cards.js
+marketing/story-teaser/cards.json
+marketing/story-teaser/fonts.css
