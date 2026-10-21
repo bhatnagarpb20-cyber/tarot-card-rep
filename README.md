@@ -1,1 +1,1 @@
-# tarot-card-rep
+# tarot-card-repo
