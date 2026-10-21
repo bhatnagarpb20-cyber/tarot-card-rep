@@ -1,26 +1,320 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+ * Celestial Art Nouveau design tokens. Colour values mirror art/style-spec.json so the UI and the
+ * card artwork share one palette. Text pairings below meet WCAG AA contrast:
+ *   ivory on midnight ≈ 14:1 · gold-light on midnight ≈ 8.7:1 · ink on parchment ≈ 13:1 · burgundy on parchment ≈ 7.4:1
+ */
+@theme {
+  --color-ink: #0c1128;
+  --color-midnight: #141b3c;
+  --color-indigo: #1f2654;
+  --color-indigo-soft: #2b3366;
+  --color-ivory: #f3e9d2;
+  --color-parchment: #ede1c4;
+  --color-parchment-deep: #e2d2ac;
+  --color-gold: #b8913a;
+  --color-gold-light: #d9bc74;
+  --color-gold-dark: #6e5220;
+  --color-burgundy: #7a2e3a;
+  --color-burgundy-light: #b05a68;
+  --color-sage: #4f6b55;
+  --color-sage-light: #8fae94;
+  --color-mist: #c9c3d9;
+
+  --font-display: var(--font-cinzel), "Cinzel", Georgia, serif;
+  --font-heading: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-body: var(--font-source-serif), "Source Serif 4", Georgia, serif;
+
+  --radius-card: 0.9rem;
+  --ease-ritual: cubic-bezier(0.22, 0.8, 0.24, 1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    color-scheme: dark;
+    background: var(--color-ink);
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    min-height: 100dvh;
+    background:
+      radial-gradient(1200px 600px at 50% -10%, rgb(43 51 102 / 0.55), transparent 70%),
+      var(--color-midnight);
+    color: var(--color-ivory);
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  a {
+    color: var(--color-gold-light);
+    text-underline-offset: 0.2em;
+  }
+
+  /* Visible, consistent focus ring for keyboard users. */
+  :focus-visible {
+    outline: 2px solid var(--color-gold-light);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: rgb(184 145 58 / 0.4);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .eyebrow {
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-gold-light);
+  }
+
+  /* A parchment panel with a fine double gold rule — the main content surface. */
+  .panel {
+    position: relative;
+    background: var(--color-parchment);
+    color: var(--color-ink);
+    border-radius: 0.75rem;
+    box-shadow:
+      0 0 0 1px var(--color-gold),
+      0 0 0 5px var(--color-parchment),
+      0 0 0 6px rgb(184 145 58 / 0.55),
+      0 18px 40px -18px rgb(0 0 0 / 0.6);
+  }
+
+  .panel a {
+    color: var(--color-burgundy);
+  }
+
+  /* Midnight panel variant for use on midnight backgrounds. */
+  .panel-night {
+    position: relative;
+    background: linear-gradient(180deg, rgb(31 38 84 / 0.85), rgb(20 27 60 / 0.92));
+    border: 1px solid rgb(184 145 58 / 0.55);
+    border-radius: 0.75rem;
+    box-shadow: inset 0 0 0 4px rgb(20 27 60 / 0.9), inset 0 0 0 5px rgb(184 145 58 / 0.25);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 2.75rem;
+    padding: 0.6rem 1.4rem;
+    border-radius: 999px;
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition:
+      background-color 180ms var(--ease-ritual),
+      color 180ms var(--ease-ritual),
+      border-color 180ms var(--ease-ritual);
+    cursor: pointer;
+  }
+
+  .btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+
+  .btn-primary {
+    background: var(--color-gold);
+    color: var(--color-ink);
+    border: 1px solid var(--color-gold-light);
+  }
+
+  .btn-primary:hover:not(:disabled) {
+    background: var(--color-gold-light);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--color-gold-light);
+    border: 1px solid rgb(184 145 58 / 0.6);
+  }
+
+  .btn-ghost:hover:not(:disabled) {
+    background: rgb(184 145 58 / 0.12);
+  }
+
+  .panel .btn-ghost {
+    color: var(--color-burgundy);
+    border-color: var(--color-burgundy);
+  }
+
+  .field {
+    width: 100%;
+    min-height: 2.75rem;
+    padding: 0.6rem 0.85rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgb(110 82 32 / 0.55);
+    background: rgb(255 255 255 / 0.55);
+    color: var(--color-ink);
+    font: inherit;
+  }
+
+  .field-night {
+    width: 100%;
+    min-height: 2.75rem;
+    padding: 0.6rem 0.85rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgb(184 145 58 / 0.55);
+    background: rgb(12 17 40 / 0.6);
+    color: var(--color-ivory);
+    font: inherit;
+  }
+
+  .field-night::placeholder {
+    color: rgb(243 233 210 / 0.55);
+  }
+
+  .prose-arcana p + p {
+    margin-top: 0.85em;
+  }
+}
+
+/* Honour the user's reduced-motion preference everywhere, including the ritual animations. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html[data-reduced-motion="true"] *,
+html[data-reduced-motion="true"] *::before,
+html[data-reduced-motion="true"] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+
+.sr-only-focusable:not(:focus) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------------------------------------------------------------------------
+ * Ritual animations (all disabled automatically under reduced motion, above)
+ * ------------------------------------------------------------------------- */
+.flip-scene {
+  perspective: 1400px;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 900ms var(--ease-ritual);
+}
+
+.flip-inner[data-flipped="true"] {
+  transform: rotateY(180deg);
+}
+
+.flip-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.flip-face-front {
+  transform: rotateY(180deg);
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(0.72);
+    opacity: 0.55;
+  }
+  45%,
+  55% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.breath-orb {
+  animation: breathe 9s ease-in-out infinite;
+}
+
+@keyframes shuffle-left {
+  0%,
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+  30% {
+    transform: translateX(-70%) rotate(-8deg);
+  }
+  60% {
+    transform: translateX(10%) rotate(2deg);
+  }
+}
+
+@keyframes shuffle-right {
+  0%,
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+  30% {
+    transform: translateX(70%) rotate(8deg);
+  }
+  60% {
+    transform: translateX(-10%) rotate(-2deg);
+  }
+}
+
+.shuffle-a {
+  animation: shuffle-left 700ms var(--ease-ritual) 3;
+}
+
+.shuffle-b {
+  animation: shuffle-right 700ms var(--ease-ritual) 3;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise-in {
+  animation: rise-in 600ms var(--ease-ritual) both;
 }

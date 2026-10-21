@@ -1,103 +1,80 @@
-import Image from "next/image";
+import Link from "next/link";
+import { TarotCard } from "@/components/cards/TarotCard";
+import { Divider, CornerFlourish } from "@/components/ornament/Ornaments";
+
+const FEATURES = [
+  { href: "/daily", title: "A daily ritual", body: "Pause, set an intention and draw one card. It stays the same all day, ready for reflection." },
+  { href: "/readings", title: "Thoughtful readings", body: "Ask a question and receive an interpretation grounded in each card's tradition, your spread positions and your context." },
+  { href: "/academy", title: "Learn to read", body: "A twelve-level course, lessons for every one of the 78 cards, and practice that builds your own intuition." },
+  { href: "/journal", title: "A private journal", body: "Record your interpretations before you see ours, notice your patterns and revisit what resonated." },
+];
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="space-y-20">
+      <section className="grid items-center gap-10 pt-6 md:grid-cols-[1.1fr_1fr]">
+        <div>
+          <p className="eyebrow">A tarot companion</p>
+          <h1 className="mt-3 text-5xl leading-[1.05] sm:text-6xl">
+            Understand the cards.
+            <br />
+            Reflect on your life.
+            <br />
+            <em className="text-gold-light">Learn to read for yourself.</em>
+          </h1>
+          <p className="mt-6 max-w-xl text-lg text-ivory/85">
+            The Daily Arcana pairs the symbolism of the Rider–Waite–Smith tradition with careful, transparent interpretation — and teaches you to see what the cards show, so you don't have to rely on anyone else's reading.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link href="/daily" className="btn btn-primary">
+              Draw today's card
+            </Link>
+            <Link href="/academy" className="btn btn-ghost">
+              Start learning
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className="relative mx-auto flex items-end justify-center gap-3" aria-label="The first three cards of the Major Arcana">
+          <CornerFlourish className="absolute -left-6 -top-6" />
+          <TarotCard cardId="major-00-the-fool" size="sm" className="-rotate-6" />
+          <TarotCard cardId="major-01-the-magician" size="md" priority />
+          <TarotCard cardId="major-02-the-high-priestess" size="sm" className="rotate-6" />
+          <CornerFlourish className="absolute -bottom-6 -right-6 rotate-180" />
+        </div>
+      </section>
+
+      <section aria-labelledby="features-h">
+        <h2 id="features-h" className="text-center text-4xl">
+          Five ways to practise
+        </h2>
+        <Divider className="mt-4" />
+        <ul className="mt-10 grid gap-6 sm:grid-cols-2">
+          {FEATURES.map((f) => (
+            <li key={f.href}>
+              <Link href={f.href} className="panel-night block h-full p-6 text-ivory no-underline transition-colors hover:border-gold">
+                <h3 className="text-2xl text-gold-light">{f.title}</h3>
+                <p className="mt-2 text-ivory/85">{f.body}</p>
+              </Link>
+            </li>
+          ))}
+          <li className="sm:col-span-2">
+            <Link href="/deck" className="panel-night block p-6 text-ivory no-underline hover:border-gold">
+              <h3 className="text-2xl text-gold-light">The deck library</h3>
+              <p className="mt-2 text-ivory/85">Explore all 78 cards: symbolism, upright and reversed meanings, context-specific readings, quizzes and interpretation exercises.</p>
+            </Link>
+          </li>
+        </ul>
+      </section>
+
+      <section className="panel mx-auto max-w-3xl p-6 text-center sm:p-10">
+        <h2 className="text-3xl">An honest approach to tarot</h2>
+        <p className="mt-4">
+          Tarot here is a symbolic and reflective practice — not a scientifically validated way to predict the future. Readings never claim to know another person's private thoughts, and never guarantee outcomes. Traditional meanings are clearly separated from modern interpretation.
+        </p>
+        <Link href="/about" className="mt-4 inline-block">
+          Read our methodology &amp; privacy approach →
+        </Link>
+      </section>
     </div>
   );
 }

@@ -14,7 +14,7 @@ function contextual(card: TarotCard, reversed: boolean, category: Category): str
   const key = contextKey(category);
   const base = key ? card.contexts[key] : reversed ? card.reversed : card.upright;
   if (!reversed || !key) return base;
-  return `${base} Reversed, this may be blocked, internalised or overdone: ${lowerFirst(card.reversed)}`;
+  return `${base} Because the card is reversed, consider where this theme is blocked, held inward or overdone.`;
 }
 
 const lowerFirst = (s: string) => s.charAt(0).toLowerCase() + s.slice(1);
@@ -76,7 +76,7 @@ export function buildReferenceInterpretation(req: InterpretRequest): Interpretat
       reversed,
       traditionalMeaning: card.traditional,
       symbolism: card.symbols.slice(0, 4).map((s) => `${s.element}: ${s.meaning}`),
-      inContext: `${pos.meaning ? `As ${pos.label.toLowerCase()} — ${lowerFirst(pos.meaning)} ` : ""}${card.name} ${orientation(reversed)} suggests: ${reversed ? card.reversed : card.upright} In ${area}: ${lowerFirst(contextual(card, reversed, req.category))}`,
+      inContext: `${pos.meaning ? `As ${pos.label.toLowerCase()} — ${lowerFirst(pos.meaning)} ` : ""}${card.name} ${orientation(reversed)} suggests: ${reversed ? card.reversed : card.upright}${contextKey(req.category) ? ` In ${area}: ${lowerFirst(contextual(card, reversed, req.category))}` : ""}`,
     };
   });
 
@@ -84,7 +84,7 @@ export function buildReferenceInterpretation(req: InterpretRequest): Interpretat
   const questionClause = req.question ? `For your question — “${req.question}” — ` : "";
   const directAnswer =
     drawn.length === 1
-      ? `${questionClause}${first.card.name} (${orientation(first.reversed)}) points to ${keywords(first)}. ${first.reversed ? first.card.reversed : first.card.upright}`
+      ? `${questionClause}${first.card.name} (${orientation(first.reversed)}) points to ${keywords(first)}. ${contextKey(req.category) ? contextual(first.card, first.reversed, req.category) : `A question to carry with you: ${first.card.reflection[1]}`}`
       : `${questionClause}the cards move from ${first.card.name} (${keywords(first)}) toward ${lead.card.name} (${keywords(lead)}). ${lead.reversed ? lead.card.reversed : lead.card.upright}`;
 
   return {
@@ -97,7 +97,7 @@ export function buildReferenceInterpretation(req: InterpretRequest): Interpretat
       .map((c) => (c.reversed ? `${c.card.name} reversed asks you to watch for ${c.card.keywords.reversed.slice(0, 2).join(" and ")}.` : `${c.card.name} offers ${c.card.keywords.upright.slice(0, 2).join(" and ")}.`))
       .join(" "),
     nextSteps: dedupe(drawn.map((c) => c.card.action))
-      .concat(drawn.length === 1 ? [`Write a few lines in your journal on: “${first.card.reflection[1]}”`] : [])
+      .concat(drawn.length === 1 ? [`Keep the card's image in mind today — ${lowerFirst(first.card.memoryAid)}`] : [])
       .slice(0, 4),
     outlook:
       "Tarot describes tendencies and perspectives, not fixed outcomes. If the themes here continue, these cards suggest where attention could be most useful — your choices and circumstances will shape what actually happens.",

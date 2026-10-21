@@ -35,7 +35,8 @@ describe("reference interpretation", () => {
       ["pentacles-08-eight", "Guidance", false],
     ]);
     expect(r.directAnswer).toContain("Should I apply for the team lead role?");
-    expect(r.cards[1].inContext).toContain("Reversed");
+    expect(r.cards[1].inContext).toContain("Two of Swords reversed suggests");
+    expect(r.cards[1].inContext).toContain("Because the card is reversed");
     // The Magician lists the Eight of Pentacles as related; the connection should be explained.
     expect(r.connections).toContain("The Magician and Eight of Pentacles");
     expect(r.source).toBe("reference");

@@ -1,0 +1,392 @@
+{
+  "major-00-the-fool": {
+    "alt": "The Fool tarot card. A carefree young traveler steps toward the edge of a high cliff, face lifted to the sky, holding a white rose, a small bundle on a staff over one shoulder, a little white dog leaping at their heels beneath a radiant sun.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "major-01-the-magician": {
+    "alt": "The Magician tarot card. A robed magician stands behind a stone table, one hand raising a double-tipped wand to the sky and the other pointing to the earth, an infinity sign glowing above their head and a cup, sword, pentacle and wand laid on the table, framed by roses and lilies.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "major-02-the-high-priestess": {
+    "alt": "The High Priestess tarot card. A serene priestess in flowing blue and ivory robes sits between a dark pillar and a pale pillar, wearing a horned moon crown, a scroll half-hidden in her lap and a crescent moon at her feet, before a veil embroidered with pomegranates.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "major-03-the-empress": {
+    "alt": "The Empress tarot card. A crowned empress reclines on a cushioned throne in a lush garden, a heart-shaped shield bearing the Venus symbol beside her, golden wheat at her feet and a waterfall flowing from a cypress forest behind.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "major-04-the-emperor": {
+    "alt": "The Emperor tarot card. A stern bearded emperor sits on a stone throne carved with ram heads, armor beneath a burgundy robe, holding an ankh scepter and a golden orb before barren mountains.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "major-05-the-hierophant": {
+    "alt": "The Hierophant tarot card. A robed spiritual teacher in a triple crown sits between two grey pillars, one hand raised in blessing and the other holding a triple cross, crossed keys at their feet and two acolytes kneeling before them.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "major-06-the-lovers": {
+    "alt": "The Lovers tarot card. A winged angel spreads its arms above the clouds before a radiant sun, blessing a man and a woman who stand below, a fruit tree with a coiled serpent behind her and a tree of flames behind him, a mountain peak rising between them.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "major-07-the-chariot": {
+    "alt": "The Chariot tarot card. An armored charioteer stands in a stone chariot beneath a star-spangled canopy, a black sphinx and a white sphinx resting before it, a walled city and river behind.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "major-08-strength": {
+    "alt": "Strength tarot card. A gentle woman in an ivory robe crowned with flowers calmly closes the jaws of a lion, an infinity sign glowing above her head, mountains behind.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "major-09-the-hermit": {
+    "alt": "The Hermit tarot card. A cloaked grey-bearded elder stands alone on a snowy mountain peak at night, holding up a lantern that contains a shining six-pointed star and leaning on a tall staff.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "major-10-wheel-of-fortune": {
+    "alt": "Wheel of Fortune tarot card. A great golden wheel inscribed with alchemical symbols turns in the clouds, a sphinx with a sword seated on top, a serpent descending one side and a jackal-headed figure rising on the other, four winged creatures reading books in the corners.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "major-11-justice": {
+    "alt": "Justice tarot card. A crowned figure in a burgundy robe sits between two stone pillars, holding an upright double-edged sword in one hand and balanced golden scales in the other, a veil hanging behind.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "major-12-the-hanged-man": {
+    "alt": "The Hanged Man tarot card. A serene man hangs upside down by one foot from a living T-shaped tree, his other leg bent behind to form a cross, hands behind his back and a golden halo around his head.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "major-13-death": {
+    "alt": "Death tarot card. A skeletal knight in dark armor rides a white horse carrying a black banner marked with a white rose, a fallen king beneath the hooves, a bishop, a maiden and a child before it, the sun rising between two towers on the horizon.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "major-14-temperance": {
+    "alt": "Temperance tarot card. A winged angel in an ivory robe pours water between two cups, one foot on land and one in a pool, irises blooming beside them and a path winding to mountains crowned with light.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "major-15-the-devil": {
+    "alt": "The Devil tarot card. A horned, bat-winged devil with goat features crouches on a dark pedestal, one hand raised and the other holding a lowered torch, a horned man and woman loosely chained to the pedestal below.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "major-16-the-tower": {
+    "alt": "The Tower tarot card. A tall stone tower on a rocky crag is struck by lightning at night, its crown blasted from the top, flames bursting from the windows and two figures falling headlong.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "major-17-the-star": {
+    "alt": "The Star tarot card. A kneeling woman pours water from two jugs, one into a still pool and one onto the land, beneath a great eight-pointed star circled by seven smaller stars, an ibis perched in a tree behind.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "major-18-the-moon": {
+    "alt": "The Moon tarot card. A full moon with a crescent and a solemn face sheds drops of light over a dog and a wolf howling beside a pool, a crayfish emerging from the water and a path winding between two towers toward distant mountains.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "major-19-the-sun": {
+    "alt": "The Sun tarot card. A radiant sun with a calm face shines over a joyful child riding a white horse, arms spread wide and holding a burgundy banner, sunflowers peeking over a garden wall behind.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "major-20-judgement": {
+    "alt": "Judgement tarot card. A great angel in the clouds blows a trumpet hung with a banner bearing a red cross, while grey figures rise from open coffins below with arms outstretched, mountains and sea behind.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "major-21-the-world": {
+    "alt": "The World tarot card. A dancing figure wrapped in a flowing sash holds two wands inside a great laurel wreath bound with ribbons, with an angel, an eagle, a lion and a bull watching from the four corners.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "wands-01-ace": {
+    "alt": "Ace of Wands tarot card. A hand emerges from a cloud grasping a sprouting wooden wand, leaves drifting down, a castle on a hill in the distance.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "wands-02-two": {
+    "alt": "Two of Wands tarot card. A man in a burgundy cloak stands on castle battlements holding a small globe and a wand, gazing out over sea and land, a second wand fixed to the wall.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "wands-03-three": {
+    "alt": "Three of Wands tarot card. A figure seen from behind stands on a cliff beside three planted wands, watching ships sail across a golden sea.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "wands-04-four": {
+    "alt": "Four of Wands tarot card. Four wands hung with a garland of flowers and fruit form a canopy, two figures raising bouquets in celebration before a castle.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "wands-05-five": {
+    "alt": "Five of Wands tarot card. Five young figures brandish wands at one another in a spirited mock battle on open ground.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "wands-06-six": {
+    "alt": "Six of Wands tarot card. A laurel-crowned rider on a white horse carries a wand topped with a wreath through a crowd raising their own wands.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "wands-07-seven": {
+    "alt": "Seven of Wands tarot card. A determined figure on high ground fends off six wands rising from below with a single wand, wearing mismatched shoes.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "wands-08-eight": {
+    "alt": "Eight of Wands tarot card. Eight wands fly in parallel through the air over open countryside with a river and a hill.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "wands-09-nine": {
+    "alt": "Nine of Wands tarot card. A weary figure with a bandaged head leans on a wand, eight more wands standing behind like a palisade.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "wands-10-ten": {
+    "alt": "Ten of Wands tarot card. A figure bends forward under the weight of ten wands carried in a bundle toward a distant town.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "wands-11-page": {
+    "alt": "Page of Wands tarot card. A youth in a feathered cap and a tunic patterned with salamanders holds a tall wand, studying it in a desert with distant pyramids.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "wands-12-knight": {
+    "alt": "Knight of Wands tarot card. A knight in armor and a salamander-patterned tunic rides a rearing horse, wand raised, distant pyramids behind.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "wands-13-queen": {
+    "alt": "Queen of Wands tarot card. A queen sits on a lion-carved throne holding a wand and a sunflower, a black cat seated at her feet.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "wands-14-king": {
+    "alt": "King of Wands tarot card. A king on a throne decorated with lions and salamanders holds a flowering wand, a small salamander at his feet.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "cups-01-ace": {
+    "alt": "Ace of Cups tarot card. A hand emerges from a cloud holding a chalice that overflows in five streams into a lily pond, a dove descending with a wafer toward the cup.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "cups-02-two": {
+    "alt": "Two of Cups tarot card. A young man and woman exchange cups and pledge, a caduceus crowned with a winged lion's head rising between them.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "cups-03-three": {
+    "alt": "Three of Cups tarot card. Three women dance in a circle raising their cups in a garden full of harvest fruit.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "cups-04-four": {
+    "alt": "Four of Cups tarot card. A young man sits beneath a tree with arms crossed, contemplating three cups before him while a hand from a cloud offers a fourth.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "cups-05-five": {
+    "alt": "Five of Cups tarot card. A figure in a dark cloak mourns over three spilled cups while two upright cups stand behind, a bridge leading across a river to a castle.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "cups-06-six": {
+    "alt": "Six of Cups tarot card. In an old village courtyard a child offers a cup filled with white flowers to a smaller child, six flower-filled cups around them.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "cups-07-seven": {
+    "alt": "Seven of Cups tarot card. A figure seen in silhouette faces seven cups floating on clouds, each holding a vision: a castle, jewels, a laurel wreath, a dragon, a serpent, a veiled glowing figure and a head.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "cups-08-eight": {
+    "alt": "Eight of Cups tarot card. A cloaked figure with a staff walks away from eight neatly stacked cups toward rocky mountains under a crescent moon embracing a sun.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "cups-09-nine": {
+    "alt": "Nine of Cups tarot card. A contented man sits with arms crossed before a curved, cloth-draped bench holding nine cups in an arc.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "cups-10-ten": {
+    "alt": "Ten of Cups tarot card. A couple raises their arms toward a rainbow of ten cups while two children dance, a cottage by a river behind them.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "cups-11-page": {
+    "alt": "Page of Cups tarot card. A youth in a floral tunic stands by the sea holding a cup from which a small fish peeks out.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "cups-12-knight": {
+    "alt": "Knight of Cups tarot card. A knight in winged helmet rides a calm white horse at a walk, holding a cup forward, a river running through the valley.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "cups-13-queen": {
+    "alt": "Queen of Cups tarot card. A queen sits on a throne at the sea's edge carved with cherubs, gazing into an ornate closed chalice.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "cups-14-king": {
+    "alt": "King of Cups tarot card. A king on a throne floating on a choppy sea holds a cup and a scepter, a ship and a leaping fish nearby.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "swords-01-ace": {
+    "alt": "Ace of Swords tarot card. A hand emerges from a cloud holding an upright sword whose tip passes through a golden crown hung with olive and palm, above jagged mountains.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "swords-02-two": {
+    "alt": "Two of Swords tarot card. A blindfolded woman sits on a stone bench with arms crossed over her chest, holding two swords, a rocky sea and crescent moon behind her.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "swords-03-three": {
+    "alt": "Three of Swords tarot card. A heart pierced by three swords hangs against storm clouds and slanting rain.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "swords-04-four": {
+    "alt": "Four of Swords tarot card. The effigy of a knight lies on a tomb in a quiet chapel, hands joined in prayer, three swords on the wall above and one along the tomb, a stained-glass window nearby.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "swords-05-five": {
+    "alt": "Five of Swords tarot card. A smirking figure gathers swords while two defeated figures walk away toward the sea under a torn, windy sky.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "swords-06-six": {
+    "alt": "Six of Swords tarot card. A ferryman poles a boat carrying a cloaked woman and child toward a calm far shore, six swords standing upright in the boat.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "swords-07-seven": {
+    "alt": "Seven of Swords tarot card. A figure tiptoes away from a camp of tents carrying five swords, glancing back at two swords left planted in the ground.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "swords-08-eight": {
+    "alt": "Eight of Swords tarot card. A bound and blindfolded woman stands in marshy ground surrounded by eight swords, a castle on a cliff behind.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "swords-09-nine": {
+    "alt": "Nine of Swords tarot card. A figure sits up in bed with face buried in their hands, nine swords stacked horizontally on the dark wall, a quilt patterned with roses and astrological signs.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "swords-10-ten": {
+    "alt": "Ten of Swords tarot card. A figure lies face down pierced by ten swords beneath a dark sky, while dawn breaks gold over still water on the horizon.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "swords-11-page": {
+    "alt": "Page of Swords tarot card. A youth stands on a windswept hill holding a sword upright with both hands, birds scattering through billowing clouds.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "swords-12-knight": {
+    "alt": "Knight of Swords tarot card. A knight charges at full gallop on a white horse, sword raised, through wind-bent trees and racing clouds.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "swords-13-queen": {
+    "alt": "Queen of Swords tarot card. A queen sits in profile on a throne carved with butterflies, holding an upright sword with one hand and extending the other, a single bird high in the sky.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "swords-14-king": {
+    "alt": "King of Swords tarot card. A king sits facing forward on a throne carved with butterflies, holding an upright sword slightly tilted, cypress trees and birds behind.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "pentacles-01-ace": {
+    "alt": "Ace of Pentacles tarot card. A hand emerges from a cloud holding a great golden pentacle above a garden of lilies, a hedge archway opening onto distant mountains.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "pentacles-02-two": {
+    "alt": "Two of Pentacles tarot card. A young man in a tall hat dances while juggling two pentacles bound by an infinity loop, ships riding high waves behind him.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "pentacles-03-three": {
+    "alt": "Three of Pentacles tarot card. A stonemason on a bench works in a cathedral arch while a monk and a robed patron hold plans and confer, three pentacles carved in the arch.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "pentacles-04-four": {
+    "alt": "Four of Pentacles tarot card. A crowned figure sits clutching a pentacle to their chest, another balanced on their crown and two beneath their feet, a city behind.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "pentacles-05-five": {
+    "alt": "Five of Pentacles tarot card. Two ragged figures, one on crutches, trudge through falling snow past a glowing stained-glass window showing five pentacles.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "pentacles-06-six": {
+    "alt": "Six of Pentacles tarot card. A merchant holding balanced scales gives coins to two kneeling figures, six pentacles floating around them.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "pentacles-07-seven": {
+    "alt": "Seven of Pentacles tarot card. A farmer leans on a hoe gazing thoughtfully at seven pentacles growing on a leafy vine.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "pentacles-08-eight": {
+    "alt": "Eight of Pentacles tarot card. A craftsman sits at a workbench carving a pentacle, finished pentacles hung on a post beside them, a town in the distance.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "pentacles-09-nine": {
+    "alt": "Nine of Pentacles tarot card. An elegant woman in a robe patterned with sunflowers stands in a lush vineyard with a hooded falcon on her gloved hand, nine pentacles among the vines.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "pentacles-10-ten": {
+    "alt": "Ten of Pentacles tarot card. An elderly patriarch in a patterned robe sits beneath an archway with two white dogs, a couple and a child nearby, ten pentacles arranged across the scene.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "pentacles-11-page": {
+    "alt": "Page of Pentacles tarot card. A youth stands in a green field holding a pentacle up before their eyes, studying it, a ploughed field and trees behind.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "pentacles-12-knight": {
+    "alt": "Knight of Pentacles tarot card. A knight sits motionless on a heavy black horse holding a pentacle, overlooking freshly ploughed fields.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "pentacles-13-queen": {
+    "alt": "Queen of Pentacles tarot card. A queen sits on a throne carved with goat heads and fruit in a bower of roses, cradling a pentacle in her lap, a rabbit at her feet.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  },
+  "pentacles-14-king": {
+    "alt": "King of Pentacles tarot card. A king in a robe patterned with grapevines sits on a bull-carved throne holding a pentacle and scepter, a castle behind.",
+    "reviewStatus": "not_reviewed",
+    "image": null
+  }
+}
