@@ -383,7 +383,43 @@ html[data-reduced-motion="true"] *::after {
 }
 
 .ticker {
-  animation: ticker 40s linear infinite;
+  animation: ticker 32s linear infinite;
+  will-change: transform;
+}
+
+/* Reduced motion: no frozen, half-cut marquee; show the words once, wrapped and centred. */
+@media (prefers-reduced-motion: reduce) {
+  .ticker {
+    width: 100%;
+    animation: none;
+    white-space: normal;
+  }
+  .ticker-half {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 0.5rem;
+  }
+  .ticker-dup {
+    display: none;
+  }
+}
+
+html[data-reduced-motion="true"] .ticker {
+  width: 100%;
+  animation: none;
+  white-space: normal;
+}
+
+html[data-reduced-motion="true"] .ticker-half {
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 0.5rem;
+}
+
+html[data-reduced-motion="true"] .ticker-dup {
+  display: none;
 }
 
 /* Card tilt (see components/cards/Tilt.tsx) with a moving glare highlight. */
@@ -439,4 +475,30 @@ html[data-reduced-motion="true"] *::after {
 
 .float-card {
   animation: float 3.2s ease-in-out infinite;
+}
+
+/* Native radios and checkboxes in brand colour. */
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: var(--color-hot);
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+/* Mobile menu entrance. */
+@keyframes menu-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.menu-in {
+  animation: menu-in 180ms var(--ease-ritual) both;
+}
+
+.menu-item {
+  animation: rise-in 360ms var(--ease-ritual) both;
 }

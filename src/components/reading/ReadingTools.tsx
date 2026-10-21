@@ -113,7 +113,7 @@ export function SavedNotes({ notes }: { notes: JournalNote[] }) {
   return (
     <ul className="space-y-3">
       {notes.map((n) => (
-        <li key={n.id} className="rounded border border-line bg-white/40 p-3">
+        <li key={n.id} className="rounded-xl border border-line bg-cream/5 p-3">
           <p className="text-xs font-semibold uppercase tracking-wide text-hot">{labels[n.kind]}</p>
           <p className="mt-1 whitespace-pre-wrap">{n.body}</p>
           <p className="mt-1 text-xs opacity-70">

@@ -41,11 +41,11 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
         </a>
         <SessionProvider signedIn={Boolean(session)}>
           <SiteNav signedIn={Boolean(session)} />
-          <main id="main" className="mx-auto w-full max-w-6xl px-4 pb-28 pt-8 md:pb-16">
+          <main id="main" className="mx-auto w-full max-w-6xl px-4 pb-16 pt-8">
             {children}
           </main>
         </SessionProvider>
-        <footer className="border-t border-line px-4 pb-24 pt-8 text-center text-sm text-cream/70 md:pb-8">
+        <footer className="border-t border-line px-4 pb-20 pt-8 text-center text-sm text-cream/70">
           <p>
             Tarot is presented here as a symbolic, reflective practice — not a way to predict the future.{" "}
             <Link href="/about">Privacy &amp; methodology</Link>

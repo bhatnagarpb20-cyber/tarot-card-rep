@@ -55,14 +55,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Mantra ticker */}
+      {/* Mantra ticker: two identical halves scroll seamlessly; with reduced motion it becomes a still, wrapped line. */}
       <div aria-hidden="true" className="-mx-4 overflow-hidden border-y border-line bg-void-sunk/70 py-4">
-        <div className="ticker flex w-max gap-10 whitespace-nowrap font-[family-name:var(--font-heading)] text-3xl">
-          {[...TICKER, ...TICKER].map((w, i) => (
-            <span key={i} className="flex items-center gap-10">
-              <span className={i % 2 ? "text-cream" : "text-sunset"}>{w}</span>
-              <Star size={18} className={i % 3 === 0 ? "text-acid" : i % 3 === 1 ? "text-hot" : "text-teal"} />
-            </span>
+        <div className="ticker flex w-max whitespace-nowrap font-[family-name:var(--font-heading)] text-2xl sm:text-3xl">
+          {[0, 1].map((half) => (
+            <div key={half} className={`ticker-half flex shrink-0 items-center ${half ? "ticker-dup" : ""}`}>
+              {TICKER.map((w, i) => (
+                <span key={i} className="flex items-center gap-8 pr-8 sm:gap-10 sm:pr-10">
+                  <span className={i % 2 ? "text-cream" : "text-sunset"}>{w}</span>
+                  <Star size={16} className={i % 3 === 0 ? "text-acid" : i % 3 === 1 ? "text-hot" : "text-teal"} />
+                </span>
+              ))}
+            </div>
           ))}
         </div>
       </div>

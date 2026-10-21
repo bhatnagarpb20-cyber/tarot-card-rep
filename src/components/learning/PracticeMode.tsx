@@ -65,7 +65,7 @@ export function PracticeMode() {
           <legend className="text-2xl">Difficulty</legend>
           <div className="mt-3 grid gap-3 sm:grid-cols-3">
             {(Object.keys(DIFFICULTIES) as Difficulty[]).map((d) => (
-              <label key={d} className="block rounded border border-line p-3 has-[:checked]:border-hot has-[:checked]:bg-white/50">
+              <label key={d} className="block rounded border border-line p-3 has-[:checked]:border-hot has-[:checked]:bg-hot/10">
                 <span className="flex items-center gap-2 font-semibold">
                   <input type="radio" name="difficulty" checked={difficulty === d} onChange={() => setDifficulty(d)} />
                   {DIFFICULTIES[d].label}

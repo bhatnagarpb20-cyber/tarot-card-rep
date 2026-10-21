@@ -64,7 +64,7 @@ export function ObservationExercise({ cardId, question = "", onDone }: { cardId:
         </button>
       ) : (
         feedback && (
-          <div role="status" aria-live="polite" className="space-y-4 rounded border border-line bg-white/40 p-4">
+          <div role="status" aria-live="polite" className="space-y-4 rounded-xl border border-line bg-cream/5 p-4">
             <p className="font-semibold">{feedback.encouragement}</p>
             {feedback.noticed.length > 0 && (
               <div>

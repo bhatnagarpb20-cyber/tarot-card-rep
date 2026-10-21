@@ -64,7 +64,7 @@ export default async function LessonPage({ params }: { params: Promise<{ lessonI
           <section>
             <h2 className="text-2xl">Examples</h2>
             {lesson.examples.map((e) => (
-              <div key={e.title} className="mt-3 rounded border border-line bg-white/40 p-3">
+              <div key={e.title} className="mt-3 rounded-xl border border-line bg-cream/5 p-3">
                 <h3 className="font-semibold">{e.title}</h3>
                 <p>{e.body}</p>
               </div>

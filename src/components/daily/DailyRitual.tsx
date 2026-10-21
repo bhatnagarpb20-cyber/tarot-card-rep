@@ -248,7 +248,7 @@ export function DailyRitual({ mode }: { mode: StorageMode }) {
               <legend className="font-semibold">Theme for today</legend>
               <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-2">
                 {CATEGORIES.map((c) => (
-                  <label key={c} className="flex min-h-11 items-center gap-2 rounded border border-line px-3 has-[:checked]:border-hot has-[:checked]:bg-white/50">
+                  <label key={c} className="flex min-h-12 items-center gap-3 rounded-xl border border-line px-4 has-[:checked]:border-hot has-[:checked]:bg-hot/10">
                     <input type="radio" name="category" value={c} checked={category === c} onChange={() => setCategory(c)} />
                     {CATEGORY_LABELS[c]}
                   </label>
@@ -299,11 +299,12 @@ export function DailyRitual({ mode }: { mode: StorageMode }) {
             Choose the card that calls to you
           </h1>
           <p className="mt-2 text-sm text-cream/80">Use a tap, a click, or Tab and Enter.</p>
-          <ul className="mx-auto mt-10 flex max-w-2xl flex-wrap justify-center gap-2 sm:flex-nowrap sm:gap-0" aria-label="Face-down cards">
+          {/* One overlapping fan on every screen size, arced like a hand of cards. */}
+          <ul className="mx-auto mt-12 flex max-w-2xl justify-center pb-6" aria-label="Face-down cards">
             {Array.from({ length: FACE_DOWN_COUNT }, (_, i) => {
-              const angle = (i - (FACE_DOWN_COUNT - 1) / 2) * 5;
+              const offset = i - (FACE_DOWN_COUNT - 1) / 2;
               return (
-                <li key={i} className="sm:-mx-2" style={{ transform: `rotate(${angle}deg)` }}>
+                <li key={i} className="-mx-[18px] sm:-mx-2" style={{ transform: `translateY(${offset * offset * 4}px) rotate(${offset * 6}deg)`, zIndex: i }}>
                   <button
                     type="button"
                     onClick={() => choose(i)}

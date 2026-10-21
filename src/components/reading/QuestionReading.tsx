@@ -136,7 +136,7 @@ export function QuestionReading() {
               <legend className="text-2xl">2. Life area</legend>
               <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-4">
                 {CATEGORIES.map((c) => (
-                  <label key={c} className="flex min-h-11 items-center gap-2 rounded border border-line px-3 has-[:checked]:border-hot has-[:checked]:bg-white/50">
+                  <label key={c} className="flex min-h-12 items-center gap-3 rounded-xl border border-line px-4 has-[:checked]:border-hot has-[:checked]:bg-hot/10">
                     <input type="radio" name="category" checked={category === c} onChange={() => setCategory(c)} />
                     {CATEGORY_LABELS[c]}
                   </label>

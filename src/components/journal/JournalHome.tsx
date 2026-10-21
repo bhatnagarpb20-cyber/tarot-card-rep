@@ -75,7 +75,7 @@ export function JournalHome() {
 
       {tab === "readings" && readings && (
         <section id="panel-readings" role="tabpanel" aria-labelledby="tab-readings" className="space-y-6">
-          <div className="flex flex-wrap items-end justify-center gap-4">
+          <div className="grid grid-cols-2 items-end gap-3 sm:flex sm:flex-wrap sm:justify-center sm:gap-4">
             <label className="text-sm">
               Type
               <select className="field-night mt-1 block" value={filter.kind} onChange={(e) => setFilter((f) => ({ ...f, kind: e.target.value }))}>
@@ -95,7 +95,7 @@ export function JournalHome() {
                 ))}
               </select>
             </label>
-            <label className="flex min-h-11 items-center gap-2 text-sm">
+            <label className="col-span-2 flex min-h-11 items-center gap-2 text-sm">
               <input type="checkbox" checked={filter.bookmarked} onChange={(e) => setFilter((f) => ({ ...f, bookmarked: e.target.checked }))} />
               Bookmarked only
             </label>
@@ -104,7 +104,7 @@ export function JournalHome() {
             <div className="panel mx-auto max-w-xl p-6 text-center">
               <h2 className="text-2xl">No readings yet</h2>
               <p className="mt-2">Your daily cards and question readings will appear here, with your notes.</p>
-              <div className="mt-4 flex justify-center gap-3">
+              <div className="mt-5 flex flex-col justify-center gap-3 sm:flex-row">
                 <Link href="/daily" className="btn btn-primary">Draw today's card</Link>
                 <Link href="/readings" className="btn btn-ghost">Ask a question</Link>
               </div>
