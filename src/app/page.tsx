@@ -55,8 +55,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Mantra ticker: two identical halves scroll seamlessly; with reduced motion it becomes a still, wrapped line. */}
-      <div aria-hidden="true" className="-mx-4 overflow-hidden border-y border-line bg-void-sunk/70 py-4">
+      {/* Mantra ticker (tablet and up; too cramped on phones): two identical halves scroll seamlessly; with reduced motion it becomes a still, wrapped line. */}
+      <div aria-hidden="true" className="-mx-4 hidden overflow-hidden border-y border-line bg-void-sunk/70 py-4 sm:block">
         <div className="ticker flex w-max whitespace-nowrap font-[family-name:var(--font-heading)] text-2xl sm:text-3xl">
           {[0, 1].map((half) => (
             <div key={half} className={`ticker-half flex shrink-0 items-center ${half ? "ticker-dup" : ""}`}>
