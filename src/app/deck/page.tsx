@@ -24,7 +24,7 @@ export default async function DeckPage({ searchParams }: { searchParams: Promise
   return (
     <div className="space-y-10">
       <SectionHeading eyebrow="All 78 cards" title="The deck library" intro="Explore each card's imagery, traditional meaning and modern interpretations — and practise reading it yourself." />
-      <p className="text-center text-sm text-ivory/75">
+      <p className="text-center text-sm text-ink/75">
         Artwork: {art.withImage} of {art.total} illustrations completed. Cards without finished artwork show a labelled placeholder face.
       </p>
       <nav aria-label="Filter the deck" className="flex flex-wrap justify-center gap-2">
@@ -44,14 +44,14 @@ export default async function DeckPage({ searchParams }: { searchParams: Promise
             <h2 id={`g-${g.key}`} className="text-3xl">
               {g.label}
             </h2>
-            <p className="mt-1 text-ivory/80">{g.blurb}</p>
+            <p className="mt-1 text-ink/80">{g.blurb}</p>
             <ul className="mt-6 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4 lg:grid-cols-7">
               {cards.map((c) => (
                 <li key={c.id}>
-                  <Link href={`/deck/${c.id}`} className="group block text-center text-ivory no-underline">
+                  <Link href={`/deck/${c.id}`} className="group block text-center text-ink no-underline">
                     <TarotCard cardId={c.id} size="fluid" />
-                    <span className="mt-2 block font-[family-name:var(--font-heading)] text-lg group-hover:text-gold-light">{c.name}</span>
-                    <span className="block text-xs text-ivory/70">{c.keywords.upright.slice(0, 2).join(" · ")}</span>
+                    <span className="mt-2 block font-[family-name:var(--font-heading)] text-lg group-hover:text-vermilion">{c.name}</span>
+                    <span className="block text-xs text-ink/70">{c.keywords.upright.slice(0, 2).join(" · ")}</span>
                   </Link>
                 </li>
               ))}

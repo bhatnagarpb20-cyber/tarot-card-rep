@@ -19,10 +19,10 @@ export function SiteNav({ signedIn }: { signedIn: boolean }) {
   const pathname = usePathname();
   return (
     <>
-      <header className="sticky top-0 z-40 border-b border-gold/30 bg-midnight/90 backdrop-blur">
+      <header className="sticky top-0 z-40 border-b border-gold/30 bg-page/90 backdrop-blur">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4">
-          <Link href="/" className="flex items-center gap-2 text-ivory no-underline">
-            <Crescent className="text-gold" />
+          <Link href="/" className="flex items-center gap-2 text-ink no-underline">
+            <Crescent className="text-gold-ink" />
             <span className="font-[family-name:var(--font-display)] text-sm tracking-[0.2em] sm:text-base">THE DAILY ARCANA</span>
           </Link>
           <nav aria-label="Main" className="hidden md:block">
@@ -32,7 +32,7 @@ export function SiteNav({ signedIn }: { signedIn: boolean }) {
                   <Link
                     href={l.href}
                     aria-current={isActive(pathname, l.href) ? "page" : undefined}
-                    className="rounded-full px-3 py-2 text-sm text-ivory/85 no-underline hover:text-gold-light aria-[current=page]:text-gold-light aria-[current=page]:underline"
+                    className="rounded-full px-3 py-2 text-sm text-ink/85 no-underline hover:text-vermilion aria-[current=page]:text-vermilion aria-[current=page]:underline"
                   >
                     {l.label}
                   </Link>
@@ -46,14 +46,14 @@ export function SiteNav({ signedIn }: { signedIn: boolean }) {
         </div>
       </header>
       {/* Mobile tab bar: thumb-reachable primary navigation. */}
-      <nav aria-label="Main" className="fixed inset-x-0 bottom-0 z-40 border-t border-gold/30 bg-midnight/95 backdrop-blur md:hidden">
+      <nav aria-label="Main" className="fixed inset-x-0 bottom-0 z-40 border-t border-gold/30 bg-page/95 backdrop-blur md:hidden">
         <ul className="mx-auto grid max-w-md grid-cols-5">
           {LINKS.map((l) => (
             <li key={l.href}>
               <Link
                 href={l.href}
                 aria-current={isActive(pathname, l.href) ? "page" : undefined}
-                className="flex min-h-14 flex-col items-center justify-center border-t-2 border-transparent text-xs text-ivory/80 no-underline aria-[current=page]:border-gold aria-[current=page]:text-gold-light"
+                className="flex min-h-14 flex-col items-center justify-center border-t-2 border-transparent text-xs text-ink/80 no-underline aria-[current=page]:border-gold aria-[current=page]:text-vermilion"
               >
                 {l.short}
               </Link>

@@ -2,7 +2,7 @@
 
 export function Divider({ className = "" }: { className?: string }) {
   return (
-    <svg aria-hidden="true" viewBox="0 0 320 24" className={`mx-auto h-5 w-64 max-w-full text-gold ${className}`} fill="none">
+    <svg aria-hidden="true" viewBox="0 0 320 24" className={`mx-auto h-5 w-64 max-w-full text-gold-ink ${className}`} fill="none">
       <path d="M8 12h118M194 12h118" stroke="currentColor" strokeWidth="1" />
       <path d="M126 12c10-9 20-9 26 0-6 9-16 9-26 0zM194 12c-10-9-20-9-26 0 6 9 16 9 26 0z" stroke="currentColor" strokeWidth="1" />
       <path d="M160 3l2.6 6.4L169 12l-6.4 2.6L160 21l-2.6-6.4L151 12l6.4-2.6z" fill="currentColor" />
@@ -31,7 +31,7 @@ export function Crescent({ className = "", size = 18 }: { className?: string; si
 /** Art Nouveau corner flourish; rotate via className for other corners. */
 export function CornerFlourish({ className = "" }: { className?: string }) {
   return (
-    <svg aria-hidden="true" viewBox="0 0 64 64" className={`h-10 w-10 text-gold ${className}`} fill="none" stroke="currentColor" strokeWidth="1.1">
+    <svg aria-hidden="true" viewBox="0 0 64 64" className={`h-10 w-10 text-gold-ink ${className}`} fill="none" stroke="currentColor" strokeWidth="1.1">
       <path d="M2 62V22C2 10 10 2 22 2h40" />
       <path d="M8 62V26c0-10 8-18 18-18h36" opacity="0.6" />
       <path d="M14 30c6-2 10-8 10-16M24 14c4 6 10 8 16 8" />
@@ -49,7 +49,7 @@ export function SectionHeading({ eyebrow, title, intro, as: Tag = "h1" }: { eyeb
       {eyebrow && <p className="eyebrow">{eyebrow}</p>}
       <Tag className={Tag === "h1" ? "mt-2 text-4xl sm:text-5xl" : "mt-1 text-3xl"}>{title}</Tag>
       <Divider className="mt-4" />
-      {intro && <p className="mt-4 text-ivory/85">{intro}</p>}
+      {intro && <p className="mt-4 text-ink/85">{intro}</p>}
     </header>
   );
 }

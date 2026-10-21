@@ -83,23 +83,23 @@ export function TarotCard({ cardId, reversed = false, size = "md", priority = fa
 
 function PendingCardFace({ name, numeral, suit, label, compact }: { name: string; numeral: string | null; suit: Suit | null; label: string; compact: boolean }) {
   return (
-    <div role="img" aria-label={label} className="relative flex h-full w-full flex-col bg-[radial-gradient(circle_at_50%_40%,var(--color-indigo),var(--color-ink))] p-[5%] text-ivory">
+    <div role="img" aria-label={label} className="relative flex h-full w-full flex-col bg-page-raised p-[5%] text-ink">
       <div aria-hidden="true" className="absolute inset-[3%] rounded-[calc(var(--radius-card)-4px)] border border-gold/80" />
       <div aria-hidden="true" className="absolute inset-[5.5%] rounded-[calc(var(--radius-card)-6px)] border border-gold/30" />
       {/* Arched window */}
-      <div aria-hidden="true" className="relative mx-[6%] mt-[9%] flex flex-1 flex-col items-center justify-center rounded-t-[999px] border-2 border-gold/80 bg-midnight/60">
-        <span className="absolute -top-[0.9em] flex h-[1.8em] min-w-[1.8em] items-center justify-center rounded-full border border-gold bg-ink px-1 font-[family-name:var(--font-display)] text-[0.7em] text-ivory">
-          {numeral ?? <Star size={10} className="text-gold-light" />}
+      <div aria-hidden="true" className="relative mx-[6%] mt-[9%] flex flex-1 flex-col items-center justify-center rounded-t-[999px] border-2 border-gold/80 bg-page/60">
+        <span className="absolute -top-[0.9em] flex h-[1.8em] min-w-[1.8em] items-center justify-center rounded-full border border-gold bg-page-sunk px-1 font-[family-name:var(--font-display)] text-[0.7em] text-ink">
+          {numeral ?? <Star size={10} className="text-vermilion" />}
         </span>
         {suit ? (
-          <SuitEmblem suit={suit} className="h-1/3 w-1/3 text-gold/70" />
+          <SuitEmblem suit={suit} className="h-1/3 w-1/3 text-gold-ink/70" />
         ) : (
-          <span className="font-[family-name:var(--font-display)] text-[2.2em] text-gold/60">{numeral}</span>
+          <span className="font-[family-name:var(--font-display)] text-[2.2em] text-gold-ink">{numeral}</span>
         )}
-        {!compact && <span className="mt-3 px-2 text-center font-[family-name:var(--font-display)] text-[0.55em] uppercase tracking-[0.18em] text-gold-light/90">Illustration in production</span>}
+        {!compact && <span className="mt-3 px-2 text-center font-[family-name:var(--font-display)] text-[0.55em] uppercase tracking-[0.18em] text-vermilion/90">Illustration in production</span>}
       </div>
       {/* Title plate */}
-      <div aria-hidden="true" className="relative mx-[2%] mb-[4%] mt-[5%] rounded border border-gold/80 bg-ink/80 px-1 py-[4%] text-center">
+      <div aria-hidden="true" className="relative mx-[2%] mb-[4%] mt-[5%] rounded border border-gold/80 bg-page-sunk/80 px-1 py-[4%] text-center">
         <span className={`block font-[family-name:var(--font-display)] leading-tight ${compact ? "text-[0.5em]" : "text-[0.8em]"}`}>{name}</span>
       </div>
     </div>

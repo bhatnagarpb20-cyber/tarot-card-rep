@@ -60,7 +60,7 @@ export default async function CardPage({ params }: { params: Promise<{ id: strin
               <dd className="mt-1">{card.keywords.reversed.join(" · ")}</dd>
             </div>
           </dl>
-          <p className="mt-5 text-lg italic text-ivory/90">{card.memoryAid}</p>
+          <p className="mt-5 text-lg italic text-ink/90">{card.memoryAid}</p>
           <ul className="mt-5 flex flex-wrap gap-2 text-sm">
             {[
               ["#symbolism", "Symbolism"],
@@ -173,7 +173,7 @@ export default async function CardPage({ params }: { params: Promise<{ id: strin
                   <Link href={`/deck/${rc.id}`} className="font-semibold">
                     {rc.name}
                   </Link>
-                  <span className="block text-sm text-ivory/80">{r.reason}</span>
+                  <span className="block text-sm text-ink/80">{r.reason}</span>
                 </span>
               </li>
             );
@@ -181,7 +181,7 @@ export default async function CardPage({ params }: { params: Promise<{ id: strin
         </ul>
       </Block>
 
-      <footer className="space-y-4 text-sm text-ivory/75">
+      <footer className="space-y-4 text-sm text-ink/75">
         <p>
           <strong>Sources:</strong>{" "}
           {card.sources.map((s, i) => (

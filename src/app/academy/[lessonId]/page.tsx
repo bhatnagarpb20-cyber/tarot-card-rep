@@ -32,7 +32,7 @@ export default async function LessonPage({ params }: { params: Promise<{ lessonI
           <p className="eyebrow">{course.title} · Lesson {index + 1} of {course.lessons.length}</p>
           <h1 className="mt-2 text-4xl sm:text-5xl">{lesson.title}</h1>
           <Divider className="mt-4" />
-          <p className="mt-4 text-lg text-ivory/85">{lesson.summary}</p>
+          <p className="mt-4 text-lg text-ink/85">{lesson.summary}</p>
         </header>
 
         <section aria-labelledby="obj" className="panel-night p-5">
@@ -44,7 +44,7 @@ export default async function LessonPage({ params }: { params: Promise<{ lessonI
           <ul className="flex flex-wrap justify-center gap-4" aria-label="Cards in this lesson">
             {lesson.cards.map((id) => (
               <li key={id} className="text-center">
-                <Link href={`/deck/${id}`} className="block text-ivory no-underline">
+                <Link href={`/deck/${id}`} className="block text-ink no-underline">
                   <TarotCard cardId={id} size="sm" />
                   <span className="mt-1 block text-sm">{requireCard(id).name}</span>
                 </Link>

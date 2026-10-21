@@ -9,7 +9,7 @@ export default function OnboardingPage() {
     <div className="mx-auto max-w-2xl space-y-8">
       <SectionHeading eyebrow="Welcome" title="Let's set up your practice" intro="A few choices about how you'd like to read. You can change any of them later in Settings." />
       <section className="panel-night p-5 text-sm">
-        <h2 className="text-xl text-gold-light">How The Daily Arcana works</h2>
+        <h2 className="text-xl text-vermilion">How The Daily Arcana works</h2>
         <ul className="mt-2 list-disc space-y-1 pl-5">
           <li>Each day you can draw one card. It's saved, so it stays the same all day.</li>
           <li>Interpretations come from a curated library of all 78 cards; optional AI readings build on it, never replace it.</li>

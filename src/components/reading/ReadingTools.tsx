@@ -136,8 +136,8 @@ export function AiRequest({ reading, client, available, onSnapshot }: { reading:
   if (!available.ok) {
     return (
       <div className="panel-night p-4 text-sm">
-        <p className="font-semibold text-gold-light">AI interpretation unavailable</p>
-        <p className="mt-1 text-ivory/85">{available.reason}</p>
+        <p className="font-semibold text-vermilion">AI interpretation unavailable</p>
+        <p className="mt-1 text-ink/85">{available.reason}</p>
       </div>
     );
   }
@@ -156,13 +156,13 @@ export function AiRequest({ reading, client, available, onSnapshot }: { reading:
 
   return (
     <div className="panel-night p-4">
-      <p className="text-sm text-ivory/85">
+      <p className="text-sm text-ink/85">
         Want a deeper reading tailored to your question? The AI uses the same cards, positions and the card library — it cannot change your cards.
       </p>
       <button type="button" className="btn btn-primary mt-3" onClick={request} disabled={status === "loading"} aria-describedby="ai-status">
         {status === "loading" ? "Interpreting… (this can take up to a minute)" : "Get a detailed AI interpretation"}
       </button>
-      <p id="ai-status" role="status" aria-live="polite" className="mt-2 text-sm text-gold-light">
+      <p id="ai-status" role="status" aria-live="polite" className="mt-2 text-sm text-vermilion">
         {status === "error" && `${message} Your reference reading above is still complete.`}
       </p>
     </div>
@@ -227,7 +227,7 @@ export function FollowUpPanel({ reading, client, available, onAdded, onNewPull }
             {status === "loading" ? "Thinking…" : "Ask follow-up"}
           </button>
           {error && (
-            <p role="alert" className="text-sm text-gold-light">
+            <p role="alert" className="text-sm text-vermilion">
               {error}
             </p>
           )}

@@ -1,12 +1,20 @@
 @import "tailwindcss";
 
 /*
- * Celestial Art Nouveau design tokens. Colour values mirror art/style-spec.json so the UI and the
- * card artwork share one palette. Text pairings below meet WCAG AA contrast:
- *   ivory on midnight ≈ 14:1 · gold-light on midnight ≈ 8.7:1 · ink on parchment ≈ 13:1 · burgundy on parchment ≈ 7.4:1
+ * Illuminated Parchment design tokens, matching the deck's ivory, vermilion, lapis and gold palette
+ * (art/style-spec.json). Pages are light: ink text on parchment, vermilion accents, gold rules.
+ * Gold is for lines and ornament only; use gold-ink for gold-coloured text. Midnight and indigo
+ * remain for the card back. Text pairings below meet WCAG AA contrast on `page`:
+ *   ink ≈ 13:1 · vermilion ≈ 7:1 · lapis ≈ 7.5:1 · gold-ink ≈ 5.6:1 · burgundy ≈ 8:1
  */
 @theme {
-  --color-ink: #0c1128;
+  --color-ink: #1c2440;
+  --color-page: #f5ecd8;
+  --color-page-raised: #fbf6ea;
+  --color-page-sunk: #ebdfc4;
+  --color-vermilion: #9a2e22;
+  --color-lapis: #2d4a7a;
+  --color-gold-ink: #74561b;
   --color-midnight: #141b3c;
   --color-indigo: #1f2654;
   --color-indigo-soft: #2b3366;
@@ -32,16 +40,16 @@
 
 @layer base {
   html {
-    color-scheme: dark;
-    background: var(--color-ink);
+    color-scheme: light;
+    background: var(--color-page);
   }
 
   body {
     min-height: 100dvh;
     background:
-      radial-gradient(1200px 600px at 50% -10%, rgb(43 51 102 / 0.55), transparent 70%),
-      var(--color-midnight);
-    color: var(--color-ivory);
+      radial-gradient(1200px 600px at 50% -10%, rgb(255 252 244 / 0.9), transparent 70%),
+      var(--color-page);
+    color: var(--color-ink);
     font-family: var(--font-body);
     font-size: 1.0625rem;
     line-height: 1.65;
@@ -62,7 +70,7 @@
   }
 
   a {
-    color: var(--color-gold-light);
+    color: var(--color-vermilion);
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 0.2em;
@@ -70,9 +78,14 @@
 
   /* Visible, consistent focus ring for keyboard users. */
   :focus-visible {
-    outline: 2px solid var(--color-gold-light);
+    outline: 2px solid var(--color-lapis);
     outline-offset: 3px;
     border-radius: 4px;
+  }
+
+  /* Headings that receive focus programmatically (to announce a new step) aren't controls. */
+  [tabindex="-1"]:focus {
+    outline: none;
   }
 
   ::selection {
@@ -86,33 +99,33 @@
     font-size: 0.78rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--color-gold-light);
+    color: var(--color-vermilion);
   }
 
-  /* A parchment panel with a fine double gold rule — the main content surface. */
+  /* A raised paper panel with a fine double gold rule — the main content surface. */
   .panel {
     position: relative;
-    background: var(--color-parchment);
+    background: var(--color-page-raised);
     color: var(--color-ink);
     border-radius: 0.75rem;
     box-shadow:
       0 0 0 1px var(--color-gold),
-      0 0 0 5px var(--color-parchment),
+      0 0 0 5px var(--color-page-raised),
       0 0 0 6px rgb(184 145 58 / 0.55),
-      0 18px 40px -18px rgb(0 0 0 / 0.6);
+      0 18px 36px -22px rgb(60 40 10 / 0.35);
   }
 
   .panel a:not(.btn) {
     color: var(--color-burgundy);
   }
 
-  /* Midnight panel variant for use on midnight backgrounds. */
+  /* Quieter panel variant: a single gold rule on raised paper (for lists, options and tiles). */
   .panel-night {
     position: relative;
-    background: linear-gradient(180deg, rgb(31 38 84 / 0.85), rgb(20 27 60 / 0.92));
-    border: 1px solid rgb(184 145 58 / 0.55);
+    background: rgb(251 246 234 / 0.75);
+    border: 1px solid rgb(184 145 58 / 0.6);
     border-radius: 0.75rem;
-    box-shadow: inset 0 0 0 4px rgb(20 27 60 / 0.9), inset 0 0 0 5px rgb(184 145 58 / 0.25);
+    box-shadow: inset 0 0 0 4px rgb(251 246 234 / 0.9), inset 0 0 0 5px rgb(184 145 58 / 0.25);
   }
 
   .btn {
@@ -141,23 +154,23 @@
   }
 
   .btn-primary {
-    background: var(--color-gold);
-    color: var(--color-ink);
-    border: 1px solid var(--color-gold-light);
+    background: var(--color-vermilion);
+    color: var(--color-page-raised);
+    border: 1px solid var(--color-gold);
   }
 
   .btn-primary:hover:not(:disabled) {
-    background: var(--color-gold-light);
+    background: #7f241a;
   }
 
   .btn-ghost {
     background: transparent;
-    color: var(--color-gold-light);
-    border: 1px solid rgb(184 145 58 / 0.6);
+    color: var(--color-vermilion);
+    border: 1px solid var(--color-vermilion);
   }
 
   .btn-ghost:hover:not(:disabled) {
-    background: rgb(184 145 58 / 0.12);
+    background: rgb(154 46 34 / 0.08);
   }
 
   .panel .btn-ghost {
@@ -181,14 +194,14 @@
     min-height: 2.75rem;
     padding: 0.6rem 0.85rem;
     border-radius: 0.5rem;
-    border: 1px solid rgb(184 145 58 / 0.55);
-    background: rgb(12 17 40 / 0.6);
-    color: var(--color-ivory);
+    border: 1px solid rgb(110 82 32 / 0.55);
+    background: rgb(255 255 255 / 0.6);
+    color: var(--color-ink);
     font: inherit;
   }
 
   .field-night::placeholder {
-    color: rgb(243 233 210 / 0.55);
+    color: rgb(28 36 64 / 0.55);
   }
 
   .prose-arcana p + p {

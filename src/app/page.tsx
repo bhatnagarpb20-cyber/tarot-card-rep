@@ -20,9 +20,9 @@ export default function Home() {
             <br />
             Reflect on your life.
             <br />
-            <em className="text-gold-light">Learn to read for yourself.</em>
+            <em className="text-vermilion">Learn to read for yourself.</em>
           </h1>
-          <p className="mt-6 max-w-xl text-lg text-ivory/85">
+          <p className="mt-6 max-w-xl text-lg text-ink/85">
             The Daily Arcana pairs the symbolism of the Rider–Waite–Smith tradition with careful, transparent interpretation — and teaches you to see what the cards show, so you don't have to rely on anyone else's reading.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
@@ -51,16 +51,16 @@ export default function Home() {
         <ul className="mt-10 grid gap-6 sm:grid-cols-2">
           {FEATURES.map((f) => (
             <li key={f.href}>
-              <Link href={f.href} className="panel-night block h-full p-6 text-ivory no-underline transition-colors hover:border-gold">
-                <h3 className="text-2xl text-gold-light">{f.title}</h3>
-                <p className="mt-2 text-ivory/85">{f.body}</p>
+              <Link href={f.href} className="panel-night block h-full p-6 text-ink no-underline transition-colors hover:border-gold">
+                <h3 className="text-2xl text-vermilion">{f.title}</h3>
+                <p className="mt-2 text-ink/85">{f.body}</p>
               </Link>
             </li>
           ))}
           <li className="sm:col-span-2">
-            <Link href="/deck" className="panel-night block p-6 text-ivory no-underline hover:border-gold">
-              <h3 className="text-2xl text-gold-light">The deck library</h3>
-              <p className="mt-2 text-ivory/85">Explore all 78 cards: symbolism, upright and reversed meanings, context-specific readings, quizzes and interpretation exercises.</p>
+            <Link href="/deck" className="panel-night block p-6 text-ink no-underline hover:border-gold">
+              <h3 className="text-2xl text-vermilion">The deck library</h3>
+              <p className="mt-2 text-ink/85">Explore all 78 cards: symbolism, upright and reversed meanings, context-specific readings, quizzes and interpretation exercises.</p>
             </Link>
           </li>
         </ul>

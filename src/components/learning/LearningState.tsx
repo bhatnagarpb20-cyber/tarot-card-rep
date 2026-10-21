@@ -48,8 +48,8 @@ export function useLearning(): Ctx {
 export function LessonStatus({ lessonId }: { lessonId: string }) {
   const { state } = useLearning();
   const s = state?.progress[lessonId]?.status;
-  if (!s) return <span className="text-xs text-ivory/60">Not started</span>;
-  return <span className={`text-xs font-semibold ${s === "completed" ? "text-sage-light" : "text-gold-light"}`}>{s === "completed" ? "✓ Completed" : "In progress"}</span>;
+  if (!s) return <span className="text-xs text-ink/80">Not started</span>;
+  return <span className={`text-xs font-semibold ${s === "completed" ? "text-sage" : "text-vermilion"}`}>{s === "completed" ? "✓ Completed" : "In progress"}</span>;
 }
 
 export function CourseProgress({ lessonIds }: { lessonIds: string[] }) {
@@ -64,7 +64,7 @@ export function CourseProgress({ lessonIds }: { lessonIds: string[] }) {
         </span>
         <span>{pct}%</span>
       </div>
-      <div className="mt-1 h-2 rounded-full bg-ink/60" role="progressbar" aria-valuemin={0} aria-valuemax={lessonIds.length} aria-valuenow={done} aria-label="Course progress">
+      <div className="mt-1 h-2 rounded-full bg-page-sunk/60" role="progressbar" aria-valuemin={0} aria-valuemax={lessonIds.length} aria-valuenow={done} aria-label="Course progress">
         <div className="h-2 rounded-full bg-gold" style={{ width: `${pct}%` }} />
       </div>
     </div>

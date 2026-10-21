@@ -41,7 +41,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#141b3c",
+  themeColor: "#f5ecd8",
   width: "device-width",
   initialScale: 1,
 };
@@ -60,7 +60,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
             {children}
           </main>
         </SessionProvider>
-        <footer className="border-t border-gold/20 px-4 pb-24 pt-8 text-center text-sm text-ivory/70 md:pb-8">
+        <footer className="border-t border-gold/20 px-4 pb-24 pt-8 text-center text-sm text-ink/70 md:pb-8">
           <p>
             Tarot is presented here as a symbolic, reflective practice — not a way to predict the future.{" "}
             <Link href="/about">Privacy &amp; methodology</Link>

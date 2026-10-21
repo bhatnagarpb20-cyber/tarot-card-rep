@@ -148,18 +148,18 @@ export function PracticeMode() {
             <h2 className="text-2xl">Feedback on your reasoning</h2>
             {feedback.strengths.length > 0 && (
               <>
-                <h3 className="mt-3 text-lg text-gold-light">What worked well</h3>
+                <h3 className="mt-3 text-lg text-vermilion">What worked well</h3>
                 <ul className="mt-1 list-disc space-y-1 pl-5">{feedback.strengths.map((s) => <li key={s}>{s}</li>)}</ul>
               </>
             )}
             {feedback.suggestions.length > 0 && (
               <>
-                <h3 className="mt-3 text-lg text-gold-light">To consider next time</h3>
+                <h3 className="mt-3 text-lg text-vermilion">To consider next time</h3>
                 <ul className="mt-1 list-disc space-y-1 pl-5">{feedback.suggestions.map((s) => <li key={s}>{s}</li>)}</ul>
               </>
             )}
-            <p className="mt-3 text-sm text-ivory/80">Several interpretations can be reasonable. Compare your reasoning with the reference below — differences are worth thinking about, not mistakes to fix.</p>
-            <p className="mt-2 text-xs text-ivory/70">{saved === "saved" ? "Saved to your practice history." : saved === "error" ? "Couldn't save this exercise." : ""}</p>
+            <p className="mt-3 text-sm text-ink/80">Several interpretations can be reasonable. Compare your reasoning with the reference below — differences are worth thinking about, not mistakes to fix.</p>
+            <p className="mt-2 text-xs text-ink/70">{saved === "saved" ? "Saved to your practice history." : saved === "error" ? "Couldn't save this exercise." : ""}</p>
           </section>
           <InterpretationView snapshot={{ interpretation: reference, generator: "reference", contentVersion: "", createdAt: "" }} headingLevel="h2" />
           <p className="text-center text-sm">

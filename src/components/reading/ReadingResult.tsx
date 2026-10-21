@@ -67,7 +67,7 @@ export function ReadingResult({ reading: initial, client, onNewPull, aiEnabledIn
           )}
         </div>
         {bookmarkError && (
-          <p role="alert" className="mt-2 text-sm text-gold-light">
+          <p role="alert" className="mt-2 text-sm text-vermilion">
             {bookmarkError}
           </p>
         )}

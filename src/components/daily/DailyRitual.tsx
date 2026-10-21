@@ -148,8 +148,8 @@ export function DailyRitual({ mode }: { mode: StorageMode }) {
   return (
     <div className="mx-auto max-w-3xl">
       {mode === "guest" && (
-        <p className="mb-6 rounded-lg border border-gold/40 bg-indigo/40 p-3 text-sm text-ivory/90">
-          <strong className="text-gold-light">Guest mode:</strong> readings are saved only in this browser on this device and are lost if you clear browser data. <Link href="/login">Sign in</Link> to keep a private, backed-up journal.
+        <p className="mb-6 rounded-lg border border-gold/40 bg-page-sunk/40 p-3 text-sm text-ink/90">
+          <strong className="text-vermilion">Guest mode:</strong> readings are saved only in this browser on this device and are lost if you clear browser data. <Link href="/login">Sign in</Link> to keep a private, backed-up journal.
         </p>
       )}
       {notice && (
@@ -159,7 +159,7 @@ export function DailyRitual({ mode }: { mode: StorageMode }) {
       )}
 
       {phase === "loading" && (
-        <p role="status" className="py-24 text-center text-ivory/80">
+        <p role="status" className="py-24 text-center text-ink/80">
           Preparing your reading…
         </p>
       )}
@@ -183,7 +183,7 @@ export function DailyRitual({ mode }: { mode: StorageMode }) {
             {greeting(tz)}. Your daily card awaits.
           </h1>
           <Divider className="mt-5" />
-          <p className="mx-auto mt-5 max-w-xl text-ivory/85">
+          <p className="mx-auto mt-5 max-w-xl text-ink/85">
             Take a moment for yourself. You'll pause, set an intention, shuffle and choose one card to reflect on today. Your card is saved, so it will be the same if you come back later.
           </p>
           <button type="button" className="btn btn-primary mt-8" onClick={() => setPhase("intention")}>
@@ -203,7 +203,7 @@ export function DailyRitual({ mode }: { mode: StorageMode }) {
           <div className="my-8 flex flex-col items-center gap-3" aria-hidden="true">
             <div className="breath-orb h-28 w-28 rounded-full border border-gold/70 bg-[radial-gradient(circle,rgb(217_188_116/0.35),transparent_70%)]" />
           </div>
-          <p className="text-center text-sm text-ivory/80">Breathe in as the circle grows, out as it softens. Three breaths are plenty.</p>
+          <p className="text-center text-sm text-ink/80">Breathe in as the circle grows, out as it softens. Three breaths are plenty.</p>
           {isExtra && (
             <p className="mx-auto mt-4 max-w-xl rounded border border-gold/40 p-3 text-sm">
               This is an <strong>additional pull</strong>. Today's card stays as it is; this new card will be saved as a separate, clearly labelled reading.
@@ -265,7 +265,7 @@ export function DailyRitual({ mode }: { mode: StorageMode }) {
               <CardBack />
             </div>
           </div>
-          <p role="status" className="mt-8 text-sm text-ivory/80">
+          <p role="status" className="mt-8 text-sm text-ink/80">
             Hold your question in mind.
           </p>
         </section>
@@ -276,7 +276,7 @@ export function DailyRitual({ mode }: { mode: StorageMode }) {
           <h1 ref={headingRef} tabIndex={-1} className="text-3xl sm:text-4xl">
             Choose the card that calls to you
           </h1>
-          <p className="mt-2 text-sm text-ivory/80">Use a tap, a click, or Tab and Enter.</p>
+          <p className="mt-2 text-sm text-ink/80">Use a tap, a click, or Tab and Enter.</p>
           <ul className="mx-auto mt-10 flex max-w-2xl flex-wrap justify-center gap-2 sm:flex-nowrap sm:gap-0" aria-label="Face-down cards">
             {Array.from({ length: FACE_DOWN_COUNT }, (_, i) => {
               const angle = (i - (FACE_DOWN_COUNT - 1) / 2) * 5;
@@ -301,7 +301,7 @@ export function DailyRitual({ mode }: { mode: StorageMode }) {
             </p>
           )}
           {error && (
-            <p role="alert" className="mt-6 font-semibold text-gold-light">
+            <p role="alert" className="mt-6 font-semibold text-vermilion">
               {error}
             </p>
           )}
@@ -354,7 +354,7 @@ export function DailyRitual({ mode }: { mode: StorageMode }) {
             <h1 ref={headingRef} tabIndex={-1} className="mt-2 text-4xl sm:text-5xl">
               {card.name}
             </h1>
-            <p className="mt-1 text-ivory/80">
+            <p className="mt-1 text-ink/80">
               {drawn.reversed ? "Reversed" : "Upright"} · {CATEGORY_LABELS[current.category]}
               {current.question && <> · “{current.question}”</>}
             </p>
@@ -370,14 +370,14 @@ export function DailyRitual({ mode }: { mode: StorageMode }) {
             <ul className="mt-3 space-y-2">
               {card.symbols.slice(0, 3).map((s) => (
                 <li key={s.element} className="flex gap-2">
-                  <Star className="mt-1.5 shrink-0 text-gold" size={10} />
+                  <Star className="mt-1.5 shrink-0 text-gold-ink" size={10} />
                   <span>
-                    <strong className="text-gold-light">{s.element}:</strong> {s.meaning}
+                    <strong className="text-vermilion">{s.element}:</strong> {s.meaning}
                   </span>
                 </li>
               ))}
             </ul>
-            <p className="mt-3 text-sm italic text-ivory/85">Memory aid: {card.memoryAid}</p>
+            <p className="mt-3 text-sm italic text-ink/85">Memory aid: {card.memoryAid}</p>
             <div className="mt-4 flex flex-wrap gap-3">
               <Link href={`/deck/${card.id}`} className="btn btn-ghost">
                 Learn this card
@@ -389,7 +389,7 @@ export function DailyRitual({ mode }: { mode: StorageMode }) {
                 Quick quiz
               </Link>
             </div>
-            <p className="mt-4 text-sm text-ivory/80">
+            <p className="mt-4 text-sm text-ink/80">
               Related cards:{" "}
               {card.related.map((r, i) => (
                 <span key={r.id}>
@@ -463,12 +463,12 @@ export function DailyRitual({ mode }: { mode: StorageMode }) {
                 })}
               </ul>
             ) : (
-              <p className="mt-2 text-sm text-ivory/75">Just one card today. That's usually enough.</p>
+              <p className="mt-2 text-sm text-ink/75">Just one card today. That's usually enough.</p>
             )}
             <button type="button" className="btn btn-ghost mt-6" onClick={startExtraPull}>
               Draw an additional card
             </button>
-            <p className="mt-2 text-xs text-ivory/70">Additional pulls are labelled and saved separately; your daily card never changes.</p>
+            <p className="mt-2 text-xs text-ink/70">Additional pulls are labelled and saved separately; your daily card never changes.</p>
           </section>
         </div>
       )}
