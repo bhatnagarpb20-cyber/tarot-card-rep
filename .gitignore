@@ -45,3 +45,5 @@ art/fonts/.cache/
 art/masters/
 test-results/
 playwright-report/
+supabase/local-stack/.env.local-stack
+/.next-*/

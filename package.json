@@ -13,7 +13,10 @@
     "db:seed:generate": "tsx scripts/generate-seed.ts",
     "art:manifest": "tsx scripts/art/build-manifest.ts",
     "art:process": "tsx scripts/art/process.ts",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "stack:up": "supabase/local-stack/up.sh",
+    "stack:gateway": "node supabase/local-stack/gateway.mjs",
+    "test:e2e:account": "E2E_NO_SERVER=1 E2E_ACCOUNT_URL=http://localhost:3200 playwright test e2e/account.spec.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.137.0",

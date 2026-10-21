@@ -166,10 +166,24 @@ describe.skipIf(!ADMIN_URL)("database schema and row-level security", () => {
     const token = rows[0].token as string;
     expect(token).toMatch(/^[A-Za-z0-9_-]{24}$/);
 
+    await asUser(userA, (c) =>
+      c.query(`insert into public.interpretation_snapshots (reading_id, user_id, source, generator, content_version, interpretation) values ($1, $2, 'reference', 'reference@1.0.0', '1.0.0', $3)`, [
+        readingA,
+        userA,
+        JSON.stringify({ directAnswer: "For your question — “A private question” — the cards suggest patience." }),
+      ]),
+    );
     const shared = await asAnon((c) => c.query("select public.get_shared_reading($1) as r", [token]));
     expect(shared.rows[0].r.cards).toEqual([{ cardId: "cups-02-two", position: 0, reversed: false }]);
     expect(shared.rows[0].r.question).toBeNull();
+    // Interpretations are opt-in because they can quote the question or context.
+    expect(shared.rows[0].r.interpretation).toBeNull();
     expect(JSON.stringify(shared.rows[0].r)).not.toContain("private context");
+
+    await asUser(userA, (c) => c.query("update public.shared_readings set include_interpretation = true where token = $1", [token]));
+    const withInterp = await asAnon((c) => c.query("select public.get_shared_reading($1) as r", [token]));
+    expect(withInterp.rows[0].r.interpretation.directAnswer).toContain("[question not shared]");
+    expect(JSON.stringify(withInterp.rows[0].r)).not.toContain("A private question");
 
     // Anonymous users cannot enumerate shares directly.
     await expect(asAnon((c) => c.query("select * from public.shared_readings"))).rejects.toThrow(/permission denied/);

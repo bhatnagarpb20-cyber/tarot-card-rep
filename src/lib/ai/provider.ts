@@ -26,6 +26,10 @@ export class AiUnavailableError extends Error {
 /** Returns the configured provider, or null when no AI credentials are set on the server. */
 export async function getProvider(): Promise<InterpretationProvider | null> {
   if (process.env.AI_PROVIDER === "none") return null;
+  if (process.env.AI_PROVIDER === "test-double") {
+    const { TestDoubleProvider } = await import("./test-double");
+    return new TestDoubleProvider();
+  }
   if (!process.env.ANTHROPIC_API_KEY) return null;
   const { AnthropicProvider } = await import("./anthropic");
   return new AnthropicProvider();

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 interface Share {
   token: string;
   include_question: boolean;
+  include_interpretation: boolean;
   created_at: string;
 }
 
@@ -12,6 +13,7 @@ interface Share {
 export function ShareManager({ readingId }: { readingId: string }) {
   const [share, setShare] = useState<Share | null | undefined>(undefined);
   const [includeQuestion, setIncludeQuestion] = useState(false);
+  const [includeInterpretation, setIncludeInterpretation] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
 
   useEffect(() => {
@@ -29,7 +31,7 @@ export function ShareManager({ readingId }: { readingId: string }) {
   return (
     <div className="panel mx-auto max-w-xl space-y-4 p-6">
       <h1 className="text-3xl">Share this reading</h1>
-      <p className="text-sm">A share link shows the cards and interpretation. It never includes your journal, your context notes, or who you are. Your question is included only if you choose.</p>
+      <p className="text-sm">A share link always shows the cards. It never includes your journal, your context notes, or who you are. You choose whether to add your question and the interpretation.</p>
       {share === undefined ? (
         <p role="status">Loading…</p>
       ) : share ? (
@@ -40,11 +42,12 @@ export function ShareManager({ readingId }: { readingId: string }) {
             <button type="button" className="btn btn-primary" onClick={async () => { await navigator.clipboard.writeText(url); setMsg("Link copied."); }}>Copy link</button>
             <button type="button" className="btn btn-ghost" onClick={async () => { const r = await fetch(`/api/readings/${readingId}/share`, { method: "DELETE" }); if (r.ok) { setShare(null); setMsg("Link revoked — it no longer works."); } }}>Revoke link</button>
           </div>
-          <p className="text-sm">Question included: {share.include_question ? "yes" : "no"}</p>
+          <p className="text-sm">Question included: {share.include_question ? "yes" : "no"} · Interpretation included: {share.include_interpretation ? "yes" : "no"}</p>
         </>
       ) : (
-        <form className="space-y-3" onSubmit={async (e) => { e.preventDefault(); const r = await fetch(`/api/readings/${readingId}/share`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ includeQuestion }) }); const body = await r.json(); if (r.ok) { setShare(body.share); setMsg(null); } else setMsg(body.error); }}>
+        <form className="space-y-3" onSubmit={async (e) => { e.preventDefault(); const r = await fetch(`/api/readings/${readingId}/share`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ includeQuestion, includeInterpretation }) }); const body = await r.json(); if (r.ok) { setShare(body.share); setMsg(null); } else setMsg(body.error); }}>
           <label className="flex items-center gap-2"><input type="checkbox" checked={includeQuestion} onChange={(e) => setIncludeQuestion(e.target.checked)} /> Include my question</label>
+          <label className="flex items-start gap-2"><input type="checkbox" className="mt-1.5" checked={includeInterpretation} onChange={(e) => setIncludeInterpretation(e.target.checked)} /> <span>Include the interpretation <span className="block text-xs opacity-80">It may refer to your question or the context you shared. If you don't share the question, its exact wording is hidden, but paraphrases may remain.</span></span></label>
           <button type="submit" className="btn btn-primary">Create share link</button>
         </form>
       )}

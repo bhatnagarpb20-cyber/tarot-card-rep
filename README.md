@@ -39,11 +39,27 @@ npm run dev                  # http://localhost:3000
 | `npm run dev` / `build` / `start` | Develop, build, serve |
 | `npm test` | Unit tests: deck completeness, draw fairness, interpretations, AI validation, stores, quizzes, stats, art pipeline |
 | `npm run test:db` | Schema and row-level security tests against local PostgreSQL (uses `TEST_DATABASE_URL`) |
-| `npm run test:e2e` | Playwright end-to-end and accessibility (axe, WCAG 2.1 AA) tests on mobile and desktop |
+| `npm run test:e2e` | Playwright end-to-end and accessibility (axe, WCAG 2.1 AA) tests on mobile and desktop (guest mode) |
+| `npm run test:e2e:account` | Account-mode end-to-end tests against a Supabase-compatible stack (see below) |
 | `npm run typecheck`, `npm run lint` | Type and lint checks |
 | `npm run db:seed:generate` | Regenerate `supabase/seed.sql` from the TypeScript content |
 | `npm run art:manifest` | Rebuild prompts and alt text in `art/manifest.json` (keeps production status) |
 | `npm run art:process -- <card-id>` | Frame, title and optimise a source illustration from `art/source/` |
+
+### Testing account mode locally (no Supabase project needed)
+
+`supabase/local-stack/` runs a minimal Supabase-compatible stack — your local PostgreSQL plus Supabase's GoTrue (auth) and PostgREST containers from Docker Hub, behind a tiny gateway — so sign-up, row-level security, sharing, export and deletion can be tested end to end:
+
+```bash
+npm run stack:up                         # needs Postgres on 127.0.0.1:5432 and Docker; writes supabase/local-stack/.env.local-stack
+npm run stack:gateway &                  # http://localhost:54321
+set -a; source supabase/local-stack/.env.local-stack; set +a
+NEXT_DIST_DIR=.next-account npm run build
+AI_PROVIDER=test-double NEXT_DIST_DIR=.next-account npx next start -p 3200 &
+E2E_AI=test-double npm run test:e2e:account
+```
+
+`AI_PROVIDER=test-double` swaps in a clearly labelled fake AI so the AI routes, quotas and snapshots can be tested without an API key. Never set it in production.
 
 Playwright in this repo uses the system Chromium. If it can't find a browser, set `PLAYWRIGHT_BROWSERS_PATH` or run `npx playwright install chromium`.
 
