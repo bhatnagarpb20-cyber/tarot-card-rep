@@ -15,6 +15,8 @@ export interface GuestPrefs {
 
 interface GuestData {
   readings: SavedReading[];
+  /** Free journal entries not tied to a reading. */
+  notes: JournalNote[];
   prefs: GuestPrefs;
 }
 
@@ -29,12 +31,12 @@ function load(): GuestData {
     const raw = globalThis.localStorage?.getItem(KEY);
     if (raw) {
       const parsed = JSON.parse(raw) as Partial<GuestData>;
-      return { readings: parsed.readings ?? [], prefs: { ...DEFAULT_PREFS, ...parsed.prefs } };
+      return { readings: parsed.readings ?? [], notes: parsed.notes ?? [], prefs: { ...DEFAULT_PREFS, ...parsed.prefs } };
     }
   } catch {
     // Corrupt or inaccessible storage: start fresh rather than crash.
   }
-  return { readings: [], prefs: { ...DEFAULT_PREFS } };
+  return { readings: [], notes: [], prefs: { ...DEFAULT_PREFS } };
 }
 
 function save(data: GuestData) {
@@ -154,6 +156,25 @@ export const guestStore = {
   remove(readingId: string) {
     const data = load();
     data.readings = data.readings.filter((r) => r.id !== readingId);
+    save(data);
+  },
+
+  listNotes(): JournalNote[] {
+    return [...load().notes].sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+  },
+
+  addNote(raw: JournalInput): JournalNote {
+    const input = journalInputSchema.parse(raw);
+    const data = load();
+    const note: JournalNote = { id: uid(), kind: input.kind, body: input.body, resonance: input.resonance, createdAt: new Date().toISOString() };
+    data.notes.push(note);
+    save(data);
+    return note;
+  },
+
+  removeNote(id: string) {
+    const data = load();
+    data.notes = data.notes.filter((n) => n.id !== id);
     save(data);
   },
 

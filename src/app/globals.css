@@ -63,6 +63,8 @@
 
   a {
     color: var(--color-gold-light);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
     text-underline-offset: 0.2em;
   }
 
@@ -100,7 +102,7 @@
       0 18px 40px -18px rgb(0 0 0 / 0.6);
   }
 
-  .panel a {
+  .panel a:not(.btn) {
     color: var(--color-burgundy);
   }
 

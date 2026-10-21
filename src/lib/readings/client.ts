@@ -74,6 +74,15 @@ export function readingsClient(mode: StorageMode) {
       async remove(id: string) {
         guestStore.remove(id);
       },
+      async listNotes() {
+        return guestStore.listNotes();
+      },
+      async addNote(input: JournalInput) {
+        return guestStore.addNote(input);
+      },
+      async removeNote(id: string) {
+        guestStore.removeNote(id);
+      },
     };
   }
   return {
@@ -104,6 +113,15 @@ export function readingsClient(mode: StorageMode) {
     },
     async remove(id: string) {
       await call(`/api/readings/${id}`, { method: "DELETE" });
+    },
+    async listNotes() {
+      return (await call<{ notes: JournalNote[] }>("/api/journal")).notes;
+    },
+    async addNote(input: JournalInput) {
+      return (await post<{ note: JournalNote }>("/api/journal", input)).note;
+    },
+    async removeNote(id: string) {
+      await call(`/api/journal/${id}`, { method: "DELETE" });
     },
   };
 }

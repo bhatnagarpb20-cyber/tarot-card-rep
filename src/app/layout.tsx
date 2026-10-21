@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import Link from "next/link";
 import "./globals.css";
 import { SiteNav } from "@/components/layout/SiteNav";
+import { SessionProvider } from "@/components/session/SessionContext";
 import { getCurrentUser } from "@/lib/supabase/server";
 
 const cinzel = localFont({
@@ -53,10 +54,12 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
         <a href="#main" className="sr-only-focusable fixed left-4 top-2 z-50 rounded bg-gold px-3 py-2 text-ink">
           Skip to main content
         </a>
-        <SiteNav signedIn={Boolean(session)} />
-        <main id="main" className="mx-auto w-full max-w-6xl px-4 pb-28 pt-8 md:pb-16">
-          {children}
-        </main>
+        <SessionProvider signedIn={Boolean(session)}>
+          <SiteNav signedIn={Boolean(session)} />
+          <main id="main" className="mx-auto w-full max-w-6xl px-4 pb-28 pt-8 md:pb-16">
+            {children}
+          </main>
+        </SessionProvider>
         <footer className="border-t border-gold/20 px-4 pb-24 pt-8 text-center text-sm text-ivory/70 md:pb-8">
           <p>
             Tarot is presented here as a symbolic, reflective practice — not a way to predict the future.{" "}

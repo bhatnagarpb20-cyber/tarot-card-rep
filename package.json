@@ -26,6 +26,7 @@
     "zod": "^3.25.76"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.10.1",
     "@eslint/eslintrc": "^3",
     "@fontsource/cinzel": "^5.1.0",
     "@fontsource/cormorant-garamond": "^5.1.0",
