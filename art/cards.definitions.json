@@ -1,0 +1,198 @@
+{
+  "$comment": "Source of truth for card identity and Rider–Waite–Smith symbolism. Edit here, then run `npm run manifest` to regenerate prompts in art/manifest.json (production status fields are preserved). `scene` is plain description reused for alt text; `symbols` are the non-negotiable RWS elements checked at review.",
+  "major": [
+    {
+      "number": 0, "name": "The Fool",
+      "scene": "A carefree young traveler steps toward the edge of a high cliff, face lifted to the sky, holding a white rose, a small bundle on a staff over one shoulder, a little white dog leaping at their heels beneath a radiant sun.",
+      "symbols": ["cliff edge with one foot stepping forward", "white rose held aloft in the left hand", "staff over the right shoulder with a small burgundy bundle", "small white dog at the heels", "radiant sun in the upper right", "patterned tunic and laurel-wreathed cap with a single feather", "distant snow-capped mountains"]
+    },
+    {
+      "number": 1, "name": "The Magician",
+      "scene": "A robed magician stands behind a stone table, one hand raising a double-tipped wand to the sky and the other pointing to the earth, an infinity sign glowing above their head and a cup, sword, pentacle and wand laid on the table, framed by roses and lilies.",
+      "symbols": ["right hand raising a double-tipped white wand skyward", "left hand pointing down to the earth", "golden infinity lemniscate above the head", "belt of a serpent biting its own tail", "table holding a cup, a sword, a pentacle and a wand", "ivory inner robe with burgundy outer mantle", "red roses overhead and white lilies in the foreground garden"]
+    },
+    {
+      "number": 2, "name": "The High Priestess",
+      "scene": "A serene priestess in flowing blue and ivory robes sits between a dark pillar and a pale pillar, wearing a horned moon crown, a scroll half-hidden in her lap and a crescent moon at her feet, before a veil embroidered with pomegranates.",
+      "symbols": ["seated between a dark pillar on her right marked B and a pale pillar on her left marked J", "horned crown cradling a full moon disc", "equal-armed solar cross on her chest", "partially concealed scroll in her lap", "crescent moon at her feet", "veil behind her embroidered with pomegranates and palm fronds", "glimpse of still water beyond the veil"],
+      "allowedGlyphs": ["B", "J"]
+    },
+    {
+      "number": 3, "name": "The Empress",
+      "scene": "A crowned empress reclines on a cushioned throne in a lush garden, a heart-shaped shield bearing the Venus symbol beside her, golden wheat at her feet and a waterfall flowing from a cypress forest behind.",
+      "symbols": ["crown of twelve stars", "robe patterned with pomegranates", "heart-shaped shield bearing the Venus symbol", "scepter raised in one hand", "ripe golden wheat in the foreground", "cypress forest and waterfall behind", "plush cushioned throne"]
+    },
+    {
+      "number": 4, "name": "The Emperor",
+      "scene": "A stern bearded emperor sits on a stone throne carved with ram heads, armor beneath a burgundy robe, holding an ankh scepter and a golden orb before barren mountains.",
+      "symbols": ["stone throne carved with four ram heads", "armor visible beneath a burgundy robe", "ankh-topped scepter in the right hand", "golden orb in the left hand", "crown", "long white beard", "rugged barren mountains behind with a thin stream at their base"]
+    },
+    {
+      "number": 5, "name": "The Hierophant",
+      "scene": "A robed spiritual teacher in a triple crown sits between two grey pillars, one hand raised in blessing and the other holding a triple cross, crossed keys at their feet and two acolytes kneeling before them.",
+      "symbols": ["triple-tiered crown", "right hand raised in benediction", "triple-barred cross staff in the left hand", "two crossed keys at the feet", "two kneeling tonsured acolytes, one robed with roses and one with lilies", "two grey pillars", "burgundy and ivory vestments"]
+    },
+    {
+      "number": 6, "name": "The Lovers",
+      "scene": "A winged angel spreads its arms above the clouds before a radiant sun, blessing a man and a woman who stand below, a fruit tree with a coiled serpent behind her and a tree of flames behind him, a mountain peak rising between them.",
+      "symbols": ["winged angel in the clouds with arms outstretched", "radiant sun behind the angel", "man and woman standing below, classically draped", "tree with fruit and a coiled serpent behind the woman", "tree bearing twelve flames behind the man", "single mountain peak between the figures"],
+      "notes": "RWS depicts the figures nude; this deck drapes them in ivory cloth for an all-ages app. Recorded as an intentional deviation."
+    },
+    {
+      "number": 7, "name": "The Chariot",
+      "scene": "An armored charioteer stands in a stone chariot beneath a star-spangled canopy, a black sphinx and a white sphinx resting before it, a walled city and river behind.",
+      "symbols": ["armored charioteer holding a wand-like scepter, no reins", "canopy spangled with stars", "crescent moons on the shoulders", "star-topped crown", "one black sphinx and one white sphinx before the chariot", "winged disc emblem on the chariot front", "walled city and river behind"]
+    },
+    {
+      "number": 8, "name": "Strength",
+      "scene": "A gentle woman in an ivory robe crowned with flowers calmly closes the jaws of a lion, an infinity sign glowing above her head, mountains behind.",
+      "symbols": ["woman gently closing a lion's jaws with bare hands", "golden infinity lemniscate above her head", "ivory robe", "wreath of flowers in her hair and a belt of roses", "calm, submissive lion", "distant mountain"]
+    },
+    {
+      "number": 9, "name": "The Hermit",
+      "scene": "A cloaked grey-bearded elder stands alone on a snowy mountain peak at night, holding up a lantern that contains a shining six-pointed star and leaning on a tall staff.",
+      "symbols": ["grey-bearded elder in a hooded grey cloak", "lantern raised in the right hand containing a six-pointed star", "tall staff in the left hand", "snow-covered mountain peak", "head bowed, looking down", "dark night sky"]
+    },
+    {
+      "number": 10, "name": "Wheel of Fortune",
+      "scene": "A great golden wheel inscribed with alchemical symbols turns in the clouds, a sphinx with a sword seated on top, a serpent descending one side and a jackal-headed figure rising on the other, four winged creatures reading books in the corners.",
+      "symbols": ["large golden wheel with eight spokes and alchemical symbols (no lettering)", "sphinx holding a sword seated atop the wheel", "serpent descending on the left", "jackal-headed figure rising on the right", "four winged creatures in the corners on clouds: angel, eagle, lion and bull, each reading a book"],
+      "notes": "RWS inscribes TARO/ROTA and Hebrew letters on the wheel; omitted under the no-text rule, alchemical glyphs retained."
+    },
+    {
+      "number": 11, "name": "Justice",
+      "scene": "A crowned figure in a burgundy robe sits between two stone pillars, holding an upright double-edged sword in one hand and balanced golden scales in the other, a veil hanging behind.",
+      "symbols": ["upright double-edged sword in the right hand", "balanced scales in the left hand", "square-jeweled crown", "burgundy robe with a green-teal cape", "seated between two grey stone pillars", "veil hanging between the pillars", "one white shoe peeking from beneath the robe"]
+    },
+    {
+      "number": 12, "name": "The Hanged Man",
+      "scene": "A serene man hangs upside down by one foot from a living T-shaped tree, his other leg bent behind to form a cross, hands behind his back and a golden halo around his head.",
+      "symbols": ["suspended upside down by the right foot", "T-shaped living tree with leaves", "left leg bent behind the right knee forming a cross", "hands bound behind the back", "calm face surrounded by a golden halo", "navy tunic and burgundy hose"]
+    },
+    {
+      "number": 13, "name": "Death",
+      "scene": "A skeletal knight in dark armor rides a white horse carrying a black banner marked with a white rose, a fallen king beneath the hooves, a bishop, a maiden and a child before it, the sun rising between two towers on the horizon.",
+      "symbols": ["skeleton in dark armor riding a white horse", "black banner bearing a white five-petaled rose", "fallen king on the ground", "standing bishop with hands joined", "kneeling maiden and child", "sun rising between two towers", "river with a small boat"]
+    },
+    {
+      "number": 14, "name": "Temperance",
+      "scene": "A winged angel in an ivory robe pours water between two cups, one foot on land and one in a pool, irises blooming beside them and a path winding to mountains crowned with light.",
+      "symbols": ["winged angel pouring water between two golden cups", "one foot in the water and one on land", "solar disc on the brow", "triangle within a square on the robe", "irises beside the pool", "path leading to mountains with a crown of light"]
+    },
+    {
+      "number": 15, "name": "The Devil",
+      "scene": "A horned, bat-winged devil with goat features crouches on a dark pedestal, one hand raised and the other holding a lowered torch, a horned man and woman loosely chained to the pedestal below.",
+      "symbols": ["horned goat-featured figure with bat wings", "inverted pentagram on the brow", "right hand raised", "lowered torch in the left hand", "dark square pedestal with a ring", "horned man and woman with tails, loosely chained by the neck, classically draped"],
+      "notes": "RWS figures are nude; draped here. Keep the devil stylized and ornamental rather than gory."
+    },
+    {
+      "number": 16, "name": "The Tower",
+      "scene": "A tall stone tower on a rocky crag is struck by lightning at night, its crown blasted from the top, flames bursting from the windows and two figures falling headlong.",
+      "symbols": ["tall stone tower on a jagged crag", "lightning bolt striking the top", "crown knocked from the summit", "flames from the windows", "two figures falling", "twenty-two small golden flame drops in the air", "dark storm sky"]
+    },
+    {
+      "number": 17, "name": "The Star",
+      "scene": "A kneeling woman pours water from two jugs, one into a still pool and one onto the land, beneath a great eight-pointed star circled by seven smaller stars, an ibis perched in a tree behind.",
+      "symbols": ["kneeling woman with one knee on land and one foot in the pool, classically draped", "pouring from two jugs: one into the pool, one onto land in five streams", "large eight-pointed star", "seven smaller eight-pointed stars", "ibis perched on a tree", "distant mountain"],
+      "notes": "RWS figure is nude; draped here."
+    },
+    {
+      "number": 18, "name": "The Moon",
+      "scene": "A full moon with a crescent and a solemn face sheds drops of light over a dog and a wolf howling beside a pool, a crayfish emerging from the water and a path winding between two towers toward distant mountains.",
+      "symbols": ["full moon with crescent and a face in profile", "falling drops of light (yods)", "dog and wolf howling", "crayfish emerging from a pool", "winding path into the distance", "two towers flanking the path", "distant mountains"]
+    },
+    {
+      "number": 19, "name": "The Sun",
+      "scene": "A radiant sun with a calm face shines over a joyful child riding a white horse, arms spread wide and holding a burgundy banner, sunflowers peeking over a garden wall behind.",
+      "symbols": ["large radiant sun with a face", "naked-armed joyful child on a white horse, wearing a flower wreath and a red feather", "flowing burgundy banner", "four sunflowers over a stone garden wall", "no saddle on the horse"]
+    },
+    {
+      "number": 20, "name": "Judgement",
+      "scene": "A great angel in the clouds blows a trumpet hung with a banner bearing a red cross, while grey figures rise from open coffins below with arms outstretched, mountains and sea behind.",
+      "symbols": ["angel in the clouds blowing a golden trumpet", "banner with an equal-armed red cross", "figures rising from coffins with arms raised", "man, woman and child in the foreground", "coffins floating on water", "distant icy mountains"]
+    },
+    {
+      "number": 21, "name": "The World",
+      "scene": "A dancing figure wrapped in a flowing sash holds two wands inside a great laurel wreath bound with ribbons, with an angel, an eagle, a lion and a bull watching from the four corners.",
+      "symbols": ["dancing figure wrapped in a flowing burgundy sash, classically draped", "a slender wand in each hand", "large oval laurel wreath", "burgundy ribbons tied top and bottom in infinity loops", "angel, eagle, lion and bull heads in the four corners on clouds"]
+    }
+  ],
+  "suits": {
+    "wands": {
+      "element": "fire", "emblem": "living wooden wands sprouting green leaves",
+      "cards": [
+        { "rank": 1, "scene": "A hand emerges from a cloud grasping a sprouting wooden wand, leaves drifting down, a castle on a hill in the distance.", "symbols": ["hand emerging from a cloud", "single wand sprouting fresh leaves", "falling leaves", "castle on a distant hill", "river and trees"] },
+        { "rank": 2, "scene": "A man in a burgundy cloak stands on castle battlements holding a small globe and a wand, gazing out over sea and land, a second wand fixed to the wall.", "symbols": ["man holding a globe in the right hand", "one wand held, one wand fixed to the battlement", "castle battlement overlooking sea and land", "emblem of crossed roses and lilies on the wall"] },
+        { "rank": 3, "scene": "A figure seen from behind stands on a cliff beside three planted wands, watching ships sail across a golden sea.", "symbols": ["figure seen from behind on a cliff top", "three wands planted in the ground, one held", "ships sailing on the sea below", "distant mountains"] },
+        { "rank": 4, "scene": "Four wands hung with a garland of flowers and fruit form a canopy, two figures raising bouquets in celebration before a castle.", "symbols": ["four upright wands joined by a garland of flowers and fruit", "two figures raising bouquets", "castle behind", "celebrating crowd in the distance"] },
+        { "rank": 5, "scene": "Five young figures brandish wands at one another in a spirited mock battle on open ground.", "symbols": ["five figures each holding a wand", "wands crossed in disorderly struggle", "varied tunics", "open ground under a clear sky"] },
+        { "rank": 6, "scene": "A laurel-crowned rider on a white horse carries a wand topped with a wreath through a crowd raising their own wands.", "symbols": ["rider on a white horse", "laurel wreath on the rider's head", "wand topped with a laurel wreath", "crowd holding five more wands", "horse caparisoned in green-teal cloth"] },
+        { "rank": 7, "scene": "A determined figure on high ground fends off six wands rising from below with a single wand, wearing mismatched shoes.", "symbols": ["figure on a hilltop holding one wand defensively", "six wands rising from below", "mismatched shoes", "determined expression"] },
+        { "rank": 8, "scene": "Eight wands fly in parallel through the air over open countryside with a river and a hill.", "symbols": ["eight wands flying diagonally in parallel", "no figures", "open countryside", "river and distant hill"] },
+        { "rank": 9, "scene": "A weary figure with a bandaged head leans on a wand, eight more wands standing behind like a palisade.", "symbols": ["figure with a bandaged head", "leaning on one wand, watchful", "eight wands standing behind like a fence", "hills behind"] },
+        { "rank": 10, "scene": "A figure bends forward under the weight of ten wands carried in a bundle toward a distant town.", "symbols": ["figure carrying ten wands in a heavy bundle", "bent posture, face hidden behind the wands", "distant town and house", "ploughed fields"] },
+        { "rank": 11, "scene": "A youth in a feathered cap and a tunic patterned with salamanders holds a tall wand, studying it in a desert with distant pyramids.", "symbols": ["youth holding a tall sprouting wand", "feathered cap", "tunic patterned with salamanders", "desert with three distant pyramids"] },
+        { "rank": 12, "scene": "A knight in armor and a salamander-patterned tunic rides a rearing horse, wand raised, distant pyramids behind.", "symbols": ["knight on a rearing horse", "wand held aloft", "tunic patterned with salamanders", "plumed helmet", "desert with pyramids"] },
+        { "rank": 13, "scene": "A queen sits on a lion-carved throne holding a wand and a sunflower, a black cat seated at her feet.", "symbols": ["queen holding a wand in the right hand", "sunflower in the left hand", "throne carved with lions", "black cat at her feet", "sunflowers and lions on the throne back"] },
+        { "rank": 14, "scene": "A king on a throne decorated with lions and salamanders holds a flowering wand, a small salamander at his feet.", "symbols": ["king holding a flowering wand", "throne back decorated with lions and salamanders", "small living salamander at his feet", "robe patterned with salamanders"] }
+      ]
+    },
+    "cups": {
+      "element": "water", "emblem": "ornate golden chalices",
+      "cards": [
+        { "rank": 1, "scene": "A hand emerges from a cloud holding a chalice that overflows in five streams into a lily pond, a dove descending with a wafer toward the cup.", "symbols": ["hand emerging from a cloud", "chalice overflowing in five streams", "descending dove carrying a wafer marked with an equal-armed cross", "falling drops of water", "water lilies on the pond"] },
+        { "rank": 2, "scene": "A young man and woman exchange cups and pledge, a caduceus crowned with a winged lion's head rising between them.", "symbols": ["man and woman each holding a cup, facing each other", "caduceus between them", "winged lion's head above the caduceus", "house on a hill behind"] },
+        { "rank": 3, "scene": "Three women dance in a circle raising their cups in a garden full of harvest fruit.", "symbols": ["three women raising cups in a toast", "dancing in a circle", "harvest of fruits and gourds at their feet", "garlands of flowers"] },
+        { "rank": 4, "scene": "A young man sits beneath a tree with arms crossed, contemplating three cups before him while a hand from a cloud offers a fourth.", "symbols": ["seated figure under a tree with arms crossed", "three cups on the grass", "hand from a cloud offering a fourth cup", "discontented, inward gaze"] },
+        { "rank": 5, "scene": "A figure in a dark cloak mourns over three spilled cups while two upright cups stand behind, a bridge leading across a river to a castle.", "symbols": ["figure in a long dark cloak, head bowed", "three spilled cups", "two upright cups behind", "river with a bridge leading to a castle"] },
+        { "rank": 6, "scene": "In an old village courtyard a child offers a cup filled with white flowers to a smaller child, six flower-filled cups around them.", "symbols": ["child offering a cup of white flowers to a smaller child", "six cups filled with white flowers", "old village courtyard", "guard walking away in the background"] },
+        { "rank": 7, "scene": "A figure seen in silhouette faces seven cups floating on clouds, each holding a vision: a castle, jewels, a laurel wreath, a dragon, a serpent, a veiled glowing figure and a head.", "symbols": ["figure in silhouette seen from behind", "seven cups on clouds", "visions: castle, jewels, laurel wreath, dragon, serpent, veiled glowing figure, a head"] },
+        { "rank": 8, "scene": "A cloaked figure with a staff walks away from eight neatly stacked cups toward rocky mountains under a crescent moon embracing a sun.", "symbols": ["cloaked figure walking away with a staff", "eight stacked cups with a gap in the top row", "rocky mountains", "crescent moon within a solar disc in the sky", "river at the base"] },
+        { "rank": 9, "scene": "A contented man sits with arms crossed before a curved, cloth-draped bench holding nine cups in an arc.", "symbols": ["satisfied man seated with arms crossed", "nine cups arranged in an arc behind him", "curved bench draped in blue cloth", "red cap"] },
+        { "rank": 10, "scene": "A couple raises their arms toward a rainbow of ten cups while two children dance, a cottage by a river behind them.", "symbols": ["rainbow arc containing ten cups", "couple with arms raised in joy", "two children dancing", "cottage and river behind"] },
+        { "rank": 11, "scene": "A youth in a floral tunic stands by the sea holding a cup from which a small fish peeks out.", "symbols": ["youth holding a cup", "small fish looking out of the cup", "tunic patterned with lotus flowers", "sea with waves behind"] },
+        { "rank": 12, "scene": "A knight in winged helmet rides a calm white horse at a walk, holding a cup forward, a river running through the valley.", "symbols": ["knight on a calm white horse", "cup held out in front", "winged helmet and heels", "tunic patterned with fish", "river in the valley"] },
+        { "rank": 13, "scene": "A queen sits on a throne at the sea's edge carved with cherubs, gazing into an ornate closed chalice.", "symbols": ["queen holding an ornate lidded chalice", "throne carved with cherubs and a scallop shell", "seated at the water's edge", "pebbles and sea"] },
+        { "rank": 14, "scene": "A king on a throne floating on a choppy sea holds a cup and a scepter, a ship and a leaping fish nearby.", "symbols": ["king holding a cup and a short scepter", "throne floating on the sea", "fish amulet on his chest", "ship on the horizon", "fish leaping from the waves"] }
+      ]
+    },
+    "swords": {
+      "element": "air", "emblem": "straight double-edged swords with gilded hilts",
+      "cards": [
+        { "rank": 1, "scene": "A hand emerges from a cloud holding an upright sword whose tip passes through a golden crown hung with olive and palm, above jagged mountains.", "symbols": ["hand emerging from a cloud", "upright double-edged sword", "golden crown encircling the tip", "olive branch and palm frond hanging from the crown", "falling drops of light", "jagged mountains below"] },
+        { "rank": 2, "scene": "A blindfolded woman sits on a stone bench with arms crossed over her chest, holding two swords, a rocky sea and crescent moon behind her.", "symbols": ["blindfolded seated woman", "two swords crossed over her chest", "stone bench", "sea with rocks behind", "crescent moon"] },
+        { "rank": 3, "scene": "A heart pierced by three swords hangs against storm clouds and slanting rain.", "symbols": ["heart pierced by three swords", "storm clouds", "slanting rain", "no figures"] },
+        { "rank": 4, "scene": "The effigy of a knight lies on a tomb in a quiet chapel, hands joined in prayer, three swords on the wall above and one along the tomb, a stained-glass window nearby.", "symbols": ["knight effigy lying on a tomb, hands in prayer", "three swords hanging point-down on the wall", "one sword lying along the tomb", "stained-glass window"] },
+        { "rank": 5, "scene": "A smirking figure gathers swords while two defeated figures walk away toward the sea under a torn, windy sky.", "symbols": ["smug figure holding three swords", "two swords on the ground", "two figures walking away dejected", "jagged windswept clouds", "sea"] },
+        { "rank": 6, "scene": "A ferryman poles a boat carrying a cloaked woman and child toward a calm far shore, six swords standing upright in the boat.", "symbols": ["ferryman poling a boat", "huddled cloaked woman and child", "six swords upright in the boat", "rough water on one side, calm on the other", "distant shore"] },
+        { "rank": 7, "scene": "A figure tiptoes away from a camp of tents carrying five swords, glancing back at two swords left planted in the ground.", "symbols": ["figure sneaking away carrying five swords", "two swords left planted", "camp of tents behind", "backward glance"] },
+        { "rank": 8, "scene": "A bound and blindfolded woman stands in marshy ground surrounded by eight swords, a castle on a cliff behind.", "symbols": ["woman bound and blindfolded", "eight swords planted around her", "marshy pools at her feet", "castle on a distant cliff"] },
+        { "rank": 9, "scene": "A figure sits up in bed with face buried in their hands, nine swords stacked horizontally on the dark wall, a quilt patterned with roses and astrological signs.", "symbols": ["figure sitting up in bed, face in hands", "nine swords horizontal on a dark wall", "quilt patterned with roses and zodiac signs", "carved bed panel"] },
+        { "rank": 10, "scene": "A figure lies face down pierced by ten swords beneath a dark sky, while dawn breaks gold over still water on the horizon.", "symbols": ["figure lying face down with ten swords in the back", "dark sky above", "golden dawn breaking on the horizon", "calm water and distant hills"] },
+        { "rank": 11, "scene": "A youth stands on a windswept hill holding a sword upright with both hands, birds scattering through billowing clouds.", "symbols": ["youth holding an upright sword with both hands", "windswept hill and trees", "scattering birds", "billowing clouds"] },
+        { "rank": 12, "scene": "A knight charges at full gallop on a white horse, sword raised, through wind-bent trees and racing clouds.", "symbols": ["knight charging at full gallop", "sword raised forward", "white horse", "wind-bent trees and racing clouds", "birds and butterflies on the harness"] },
+        { "rank": 13, "scene": "A queen sits in profile on a throne carved with butterflies, holding an upright sword with one hand and extending the other, a single bird high in the sky.", "symbols": ["queen in profile holding an upright sword", "left hand raised and extended", "throne carved with butterflies and a winged cherub", "single bird in the sky", "clouds at the horizon"] },
+        { "rank": 14, "scene": "A king sits facing forward on a throne carved with butterflies, holding an upright sword slightly tilted, cypress trees and birds behind.", "symbols": ["king facing forward holding an upright sword", "throne back with butterflies and crescent moons", "cypress trees", "two birds in the sky"] }
+      ]
+    },
+    "pentacles": {
+      "element": "earth", "emblem": "golden discs engraved with a five-pointed star",
+      "cards": [
+        { "rank": 1, "scene": "A hand emerges from a cloud holding a great golden pentacle above a garden of lilies, a hedge archway opening onto distant mountains.", "symbols": ["hand emerging from a cloud", "large golden pentacle", "garden of white lilies", "hedge archway", "path leading to distant mountains"] },
+        { "rank": 2, "scene": "A young man in a tall hat dances while juggling two pentacles bound by an infinity loop, ships riding high waves behind him.", "symbols": ["young figure in a tall hat juggling two pentacles", "infinity loop ribbon around the pentacles", "two ships on rolling waves", "dancing stance"] },
+        { "rank": 3, "scene": "A stonemason on a bench works in a cathedral arch while a monk and a robed patron hold plans and confer, three pentacles carved in the arch.", "symbols": ["stonemason on a workbench in an archway", "monk and patron holding architectural plans", "three pentacles carved in the arch", "Gothic stone interior"] },
+        { "rank": 4, "scene": "A crowned figure sits clutching a pentacle to their chest, another balanced on their crown and two beneath their feet, a city behind.", "symbols": ["crowned figure clutching a pentacle to the chest", "pentacle on top of the crown", "pentacle under each foot", "city skyline behind"] },
+        { "rank": 5, "scene": "Two ragged figures, one on crutches, trudge through falling snow past a glowing stained-glass window showing five pentacles.", "symbols": ["two impoverished figures in snow", "one on crutches with a bandaged leg", "lit stained-glass window with five pentacles", "falling snow"] },
+        { "rank": 6, "scene": "A merchant holding balanced scales gives coins to two kneeling figures, six pentacles floating around them.", "symbols": ["merchant holding balanced scales", "giving coins to two kneeling figures", "six pentacles", "burgundy robe"] },
+        { "rank": 7, "scene": "A farmer leans on a hoe gazing thoughtfully at seven pentacles growing on a leafy vine.", "symbols": ["farmer leaning on a hoe", "seven pentacles growing on a vine", "thoughtful pause", "field under open sky"] },
+        { "rank": 8, "scene": "A craftsman sits at a workbench carving a pentacle, finished pentacles hung on a post beside them, a town in the distance.", "symbols": ["craftsman carving a pentacle with hammer and chisel", "six finished pentacles displayed on a post", "one pentacle at the feet", "distant town on a road"] },
+        { "rank": 9, "scene": "An elegant woman in a robe patterned with sunflowers stands in a lush vineyard with a hooded falcon on her gloved hand, nine pentacles among the vines.", "symbols": ["elegant woman in a flowing robe with sunflower motifs", "hooded falcon on her gloved hand", "nine pentacles among grapevines", "manor house in the distance", "small snail on the ground"] },
+        { "rank": 10, "scene": "An elderly patriarch in a patterned robe sits beneath an archway with two white dogs, a couple and a child nearby, ten pentacles arranged across the scene.", "symbols": ["elder in an ornate robe seated with two white dogs", "couple and child under an archway", "ten pentacles in the Tree of Life arrangement", "castle estate behind"] },
+        { "rank": 11, "scene": "A youth stands in a green field holding a pentacle up before their eyes, studying it, a ploughed field and trees behind.", "symbols": ["youth holding a pentacle aloft and studying it", "green meadow with flowers", "ploughed field", "grove of trees", "distant mountain"] },
+        { "rank": 12, "scene": "A knight sits motionless on a heavy black horse holding a pentacle, overlooking freshly ploughed fields.", "symbols": ["knight on a still, heavy black horse", "holding a pentacle", "oak sprigs on the helmet and bridle", "ploughed fields"] },
+        { "rank": 13, "scene": "A queen sits on a throne carved with goat heads and fruit in a bower of roses, cradling a pentacle in her lap, a rabbit at her feet.", "symbols": ["queen cradling a pentacle in her lap", "throne carved with goat heads and fruit", "bower of roses overhead", "rabbit in the corner", "fertile landscape"] },
+        { "rank": 14, "scene": "A king in a robe patterned with grapevines sits on a bull-carved throne holding a pentacle and scepter, a castle behind.", "symbols": ["king holding a pentacle and a scepter", "robe patterned with grapes and vines", "throne carved with bull heads", "castle behind", "armored foot visible beneath the robe"] }
+      ]
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "$comment": "Locked deck-wide illustration spec. Changing anything here after cards are approved requires bumping `version` and re-reviewing every approved card (scripts flag cards whose specVersion differs).",
+  "version": "1.0.0",
+  "name": "Celestial Art Nouveau",
+  "palette": {
+    "midnight": { "hex": "#141B3C", "role": "skies, shadows, frame field" },
+    "midnightDeep": { "hex": "#0C1128", "role": "deepest shadow, frame outer edge" },
+    "gold": { "hex": "#B8913A", "role": "gilded detail, frame linework, highlights" },
+    "goldLight": { "hex": "#E6C878", "role": "gold specular highlight" },
+    "goldDark": { "hex": "#6E5220", "role": "gold shadow" },
+    "ivory": { "hex": "#F3E9D2", "role": "light, skin and fabric highlights, title text" },
+    "burgundy": { "hex": "#7A2E3A", "role": "accent fabric, banners, roses" },
+    "teal": { "hex": "#2F5550", "role": "sparing foliage accent only" }
+  },
+  "output": {
+    "aspectRatio": "2:3",
+    "masterWidth": 1200,
+    "masterHeight": 1800,
+    "deliveryWidths": [320, 480, 720, 1200],
+    "formats": ["avif", "webp", "jpg"],
+    "quality": { "avif": 52, "webp": 78, "jpg": 82 }
+  },
+  "sourceArt": {
+    "aspectRatio": "2:3",
+    "minWidth": 1024,
+    "minHeight": 1536,
+    "aspectTolerance": 0.01,
+    "acceptedExtensions": [".png", ".jpg", ".jpeg", ".webp"],
+    "modes": {
+      "art": "Unframed full-bleed illustration with no border and no text. The pipeline adds the deck frame, numeral medallion and title plate. Default and preferred.",
+      "finished": "Already-framed artwork that follows the frame geometry below. Only validated, cropped to 2:3 and optimised."
+    }
+  },
+  "frame": {
+    "$comment": "Coordinates on the 1200x1800 master. The illustration fills the whole canvas underneath; the frame overlays it, so only the arched window is visible.",
+    "outerInset": 22,
+    "window": { "left": 84, "right": 1116, "top": 96, "shoulder": 360, "bottom": 1518 },
+    "medallion": { "cx": 600, "cy": 96, "r": 50 },
+    "titlePlate": { "left": 84, "right": 1116, "top": 1538, "bottom": 1744 },
+    "titleFont": { "family": "Cinzel", "weight": 600, "maxSize": 74, "minSize": 46, "letterSpacing": 0.08, "maxTextWidth": 820 },
+    "numeralFont": { "family": "Cinzel", "weight": 600, "size": 38 }
+  },
+  "safeZones": {
+    "$comment": "Fractions of source art width/height. Visible window is roughly x 7–93%, y 5–84%. Key symbols must sit inside `subject`.",
+    "visible": { "x": [0.07, 0.93], "y": [0.05, 0.84] },
+    "subject": { "x": [0.12, 0.88], "y": [0.12, 0.80] },
+    "keepCalm": "Top 12% centre (medallion overlap) and bottom 16% (title plate) must contain only sky, ground or foliage — never faces, hands or required symbols."
+  },
+  "prompt": {
+    "preamble": "Original painterly tarot illustration for a single card, vertical 2:3 portrait.",
+    "style": "Celestial Art Nouveau: richly detailed oil-and-gouache painting with fine ink contour lines, flowing organic whiplash curves, decorative halo arcs behind the main figure, ornamental botanical details (lilies, roses, vines, laurel), celestial motifs (scattered gold stars, crescent moons, faint constellation lines), soft warm rim light, subtle canvas texture, matte finish. Inspired by the decorative sensibility of the Art Nouveau poster era, but an entirely original composition and character design.",
+    "palette": "Strict limited palette: deep midnight-navy (#141B3C) skies and shadows, antique gold (#B8913A) gilding and highlights, warm ivory (#F3E9D2) light, skin and fabric highlights, muted burgundy (#7A2E3A) accents, with only sparing touches of deep teal-green foliage. Traditional Rider–Waite–Smith yellows become gold dawn light; bright reds become burgundy; blues become midnight navy.",
+    "composition": "Full-bleed scene filling the entire canvas edge to edge. Main figure centred, occupying the middle of the image, fully visible from head to feet unless the card is a close-up object. Keep every required symbol, face and hand within the central 76% width and between 12% and 80% of the height. The bottom 16% shows only calm ground, water or foliage, and the top-centre 12% shows only sky.",
+    "negative": "No text, no letters, no numbers, no captions, no title, no border, no frame, no card edge, no watermark, no signature, no logo, no collage or multiple panels, no photographic realism, no 3D render look, no neon colours.",
+    "allowedGlyphsTemplate": "Exception to the no-text rule: the only permitted glyphs are {glyphs}, rendered as carved or painted symbols on the objects described, and nothing else."
+  },
+  "review": {
+    "checks": {
+      "consistency": "Palette, brushwork, lighting and ornament density match the approved reference cards; reads as the same deck at thumbnail size.",
+      "symbolism": "Every item in the card's `symbols` list is present and correct (handedness, count, colour role).",
+      "readability": "Main figure and key symbols read clearly at 320px wide; title plate text is crisp and fully legible; no busy detail competes with the title.",
+      "cropping": "Nothing important is cut by the arched window, medallion or title plate; source is exactly 2:3 or within tolerance."
+    },
+    "referenceCards": ["major-00-the-fool", "major-01-the-magician", "major-02-the-high-priestess"]
+  }
+}
