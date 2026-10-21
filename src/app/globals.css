@@ -1,58 +1,59 @@
 @import "tailwindcss";
 
 /*
- * Illuminated Parchment design tokens, matching the deck's ivory, vermilion, lapis and gold palette
- * (art/style-spec.json). Pages are light: ink text on parchment, vermilion accents, gold rules.
- * Gold is for lines and ornament only; use gold-ink for gold-coloured text. Midnight and indigo
- * remain for the card back. Text pairings below meet WCAG AA contrast on `page`:
- *   ink ≈ 13:1 · vermilion ≈ 7:1 · lapis ≈ 7.5:1 · gold-ink ≈ 5.6:1 · burgundy ≈ 8:1
+ * Inhale Exhale design tokens: a night-sky "void" with saturated, playful neon accents and cream type.
+ * Text pairings below meet WCAG AA on `void` and `void-raised`:
+ *   cream ≈ 16:1 · acid ≈ 13:1 · teal ≈ 9:1 · hot ≈ 6.5:1 · lilac ≈ 7:1 · sun ≈ 6:1
+ * `cobalt` is for fills and illustration only — never small text on the void.
  */
 @theme {
-  --color-ink: #1c2440;
-  --color-page: #f5ecd8;
-  --color-page-raised: #fbf6ea;
-  --color-page-sunk: #ebdfc4;
-  --color-vermilion: #9a2e22;
-  --color-lapis: #2d4a7a;
-  --color-gold-ink: #74561b;
+  --color-void: #0f0a1a;
+  --color-void-raised: #1a1230;
+  --color-void-sunk: #08050f;
+  --color-cream: #f7eedd;
+  --color-hot: #ff5fa8;
+  --color-sun: #ff6a2b;
+  --color-acid: #ffd84a;
+  --color-teal: #2fd1c0;
+  --color-cobalt: #3d5bff;
+  --color-lilac: #b9a2ff;
+  --color-line: rgb(247 238 221 / 0.16);
+  /* Card back (kept for the art pipeline's palette). */
   --color-midnight: #141b3c;
   --color-indigo: #1f2654;
-  --color-indigo-soft: #2b3366;
-  --color-ivory: #f3e9d2;
-  --color-parchment: #ede1c4;
-  --color-parchment-deep: #e2d2ac;
-  --color-gold: #b8913a;
-  --color-gold-light: #d9bc74;
-  --color-gold-dark: #6e5220;
-  --color-burgundy: #7a2e3a;
-  --color-burgundy-light: #b05a68;
-  --color-sage: #4f6b55;
-  --color-sage-light: #8fae94;
-  --color-mist: #c9c3d9;
 
-  --font-display: var(--font-cinzel), "Cinzel", Georgia, serif;
-  --font-heading: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
-  --font-body: var(--font-source-serif), "Source Serif 4", Georgia, serif;
+  --font-display: var(--font-bricolage), "Bricolage Grotesque", system-ui, sans-serif;
+  --font-heading: var(--font-gloock), "Gloock", Georgia, serif;
+  --font-body: var(--font-bricolage), "Bricolage Grotesque", system-ui, sans-serif;
 
-  --radius-card: 0.9rem;
+  --radius-card: 1rem;
   --ease-ritual: cubic-bezier(0.22, 0.8, 0.24, 1);
 }
 
 @layer base {
   html {
-    color-scheme: light;
-    background: var(--color-page);
+    color-scheme: dark;
+    background: var(--color-void);
   }
 
   body {
     min-height: 100dvh;
+    /* Nebula glows, a fine starfield and film grain over the void. */
     background:
-      radial-gradient(1200px 600px at 50% -10%, rgb(255 252 244 / 0.9), transparent 70%),
-      var(--color-page);
-    color: var(--color-ink);
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+      radial-gradient(1.2px 1.2px at 12% 18%, rgb(247 238 221 / 0.7), transparent 60%),
+      radial-gradient(1px 1px at 78% 9%, rgb(247 238 221 / 0.6), transparent 60%),
+      radial-gradient(1.4px 1.4px at 64% 42%, rgb(255 216 74 / 0.6), transparent 60%),
+      radial-gradient(1px 1px at 30% 66%, rgb(247 238 221 / 0.5), transparent 60%),
+      radial-gradient(1.2px 1.2px at 88% 74%, rgb(247 238 221 / 0.55), transparent 60%),
+      radial-gradient(900px 520px at 8% -6%, rgb(255 95 168 / 0.16), transparent 70%),
+      radial-gradient(900px 600px at 100% 30%, rgb(61 91 255 / 0.16), transparent 70%),
+      var(--color-void);
+    background-attachment: fixed;
+    color: var(--color-cream);
     font-family: var(--font-body);
     font-size: 1.0625rem;
-    line-height: 1.65;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -60,8 +61,9 @@
   h2,
   h3 {
     font-family: var(--font-heading);
-    font-weight: 600;
-    line-height: 1.15;
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
     text-wrap: balance;
   }
 
@@ -70,7 +72,7 @@
   }
 
   a {
-    color: var(--color-vermilion);
+    color: var(--color-hot);
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 0.2em;
@@ -78,9 +80,9 @@
 
   /* Visible, consistent focus ring for keyboard users. */
   :focus-visible {
-    outline: 2px solid var(--color-lapis);
+    outline: 2px solid var(--color-acid);
     outline-offset: 3px;
-    border-radius: 4px;
+    border-radius: 6px;
   }
 
   /* Headings that receive focus programmatically (to announce a new step) aren't controls. */
@@ -89,43 +91,55 @@
   }
 
   ::selection {
-    background: rgb(184 145 58 / 0.4);
+    background: rgb(255 95 168 / 0.45);
   }
 }
 
 @layer components {
   .eyebrow {
     font-family: var(--font-display);
-    font-size: 0.78rem;
-    letter-spacing: 0.18em;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--color-vermilion);
+    color: var(--color-acid);
   }
 
-  /* A raised paper panel with a fine double gold rule — the main content surface. */
+  /* Sunset gradient for the one or two words a heading should land on. */
+  .text-sunset {
+    background: linear-gradient(95deg, var(--color-hot), var(--color-sun) 55%, var(--color-acid));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* The main content surface: a raised, softly lit slab of night. */
   .panel {
     position: relative;
-    background: var(--color-page-raised);
-    color: var(--color-ink);
-    border-radius: 0.75rem;
+    background:
+      radial-gradient(120% 80% at 0% 0%, rgb(255 95 168 / 0.08), transparent 60%),
+      var(--color-void-raised);
+    color: var(--color-cream);
+    border: 1px solid var(--color-line);
+    border-radius: 1.5rem;
     box-shadow:
-      0 0 0 1px var(--color-gold),
-      0 0 0 5px var(--color-page-raised),
-      0 0 0 6px rgb(184 145 58 / 0.55),
-      0 18px 36px -22px rgb(60 40 10 / 0.35);
+      inset 0 1px 0 rgb(247 238 221 / 0.08),
+      0 24px 60px -30px rgb(0 0 0 / 0.9);
   }
 
   .panel a:not(.btn) {
-    color: var(--color-burgundy);
+    color: var(--color-hot);
   }
 
-  /* Quieter panel variant: a single gold rule on raised paper (for lists, options and tiles). */
+  /* Quieter tile for lists, options and choices. */
   .panel-night {
     position: relative;
-    background: rgb(251 246 234 / 0.75);
-    border: 1px solid rgb(184 145 58 / 0.6);
-    border-radius: 0.75rem;
-    box-shadow: inset 0 0 0 4px rgb(251 246 234 / 0.9), inset 0 0 0 5px rgb(184 145 58 / 0.25);
+    background: rgb(26 18 48 / 0.7);
+    border: 1px solid var(--color-line);
+    border-radius: 1.25rem;
+    transition:
+      border-color 180ms var(--ease-ritual),
+      transform 180ms var(--ease-ritual);
   }
 
   .btn {
@@ -133,18 +147,21 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    min-height: 2.75rem;
-    padding: 0.6rem 1.4rem;
+    min-height: 2.9rem;
+    padding: 0.65rem 1.5rem;
     border-radius: 999px;
     font-family: var(--font-display);
     font-size: 0.85rem;
-    letter-spacing: 0.12em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     text-decoration: none;
     transition:
       background-color 180ms var(--ease-ritual),
       color 180ms var(--ease-ritual),
-      border-color 180ms var(--ease-ritual);
+      border-color 180ms var(--ease-ritual),
+      transform 180ms var(--ease-ritual),
+      box-shadow 180ms var(--ease-ritual);
     cursor: pointer;
   }
 
@@ -153,55 +170,50 @@
     cursor: not-allowed;
   }
 
+  /* Sticker-style primary button: acid yellow with a hot-pink offset shadow. */
   .btn-primary {
-    background: var(--color-vermilion);
-    color: var(--color-page-raised);
-    border: 1px solid var(--color-gold);
+    background: var(--color-acid);
+    color: var(--color-void);
+    border: 2px solid var(--color-void);
+    box-shadow: 0 4px 0 var(--color-hot);
   }
 
   .btn-primary:hover:not(:disabled) {
-    background: #7f241a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 var(--color-hot);
+  }
+
+  .btn-primary:active:not(:disabled) {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 var(--color-hot);
   }
 
   .btn-ghost {
     background: transparent;
-    color: var(--color-vermilion);
-    border: 1px solid var(--color-vermilion);
+    color: var(--color-cream);
+    border: 1.5px solid rgb(247 238 221 / 0.45);
   }
 
   .btn-ghost:hover:not(:disabled) {
-    background: rgb(154 46 34 / 0.08);
+    border-color: var(--color-cream);
+    background: rgb(247 238 221 / 0.06);
   }
 
-  .panel .btn-ghost {
-    color: var(--color-burgundy);
-    border-color: var(--color-burgundy);
-  }
-
-  .field {
-    width: 100%;
-    min-height: 2.75rem;
-    padding: 0.6rem 0.85rem;
-    border-radius: 0.5rem;
-    border: 1px solid rgb(110 82 32 / 0.55);
-    background: rgb(255 255 255 / 0.55);
-    color: var(--color-ink);
-    font: inherit;
-  }
-
+  .field,
   .field-night {
     width: 100%;
-    min-height: 2.75rem;
-    padding: 0.6rem 0.85rem;
-    border-radius: 0.5rem;
-    border: 1px solid rgb(110 82 32 / 0.55);
-    background: rgb(255 255 255 / 0.6);
-    color: var(--color-ink);
+    min-height: 2.9rem;
+    padding: 0.65rem 0.95rem;
+    border-radius: 0.85rem;
+    border: 1px solid rgb(247 238 221 / 0.28);
+    background: var(--color-void-sunk);
+    color: var(--color-cream);
     font: inherit;
   }
 
+  .field::placeholder,
   .field-night::placeholder {
-    color: rgb(28 36 64 / 0.55);
+    color: rgb(247 238 221 / 0.55);
   }
 
   .prose-arcana p + p {
@@ -285,6 +297,33 @@ html[data-reduced-motion="true"] *::after {
   animation: breathe 9s ease-in-out infinite;
 }
 
+/* "inhale" shows while the orb grows, "exhale" while it softens (same 9 s cycle). */
+@keyframes breath-in-word {
+  0%, 40% { opacity: 1; }
+  50%, 92% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes breath-out-word {
+  0%, 40% { opacity: 0; }
+  50%, 92% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.breath-word-in {
+  animation: breath-in-word 9s ease-in-out infinite;
+}
+
+.breath-word-out {
+  animation: breath-out-word 9s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .breath-word-out {
+    display: none;
+  }
+}
+
 @keyframes shuffle-left {
   0%,
   100% {
@@ -332,4 +371,17 @@ html[data-reduced-motion="true"] *::after {
 
 .rise-in {
   animation: rise-in 600ms var(--ease-ritual) both;
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.ticker {
+  animation: ticker 40s linear infinite;
 }

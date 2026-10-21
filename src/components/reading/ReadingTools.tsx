@@ -99,7 +99,7 @@ export function JournalComposer({
         </p>
       </div>
       {error && (
-        <p id={`${id}-error`} role="alert" className="text-sm font-semibold text-burgundy">
+        <p id={`${id}-error`} role="alert" className="text-sm font-semibold text-hot">
           {error}
         </p>
       )}
@@ -113,8 +113,8 @@ export function SavedNotes({ notes }: { notes: JournalNote[] }) {
   return (
     <ul className="space-y-3">
       {notes.map((n) => (
-        <li key={n.id} className="rounded border border-gold-dark/30 bg-white/40 p-3">
-          <p className="text-xs font-semibold uppercase tracking-wide text-burgundy">{labels[n.kind]}</p>
+        <li key={n.id} className="rounded border border-line bg-white/40 p-3">
+          <p className="text-xs font-semibold uppercase tracking-wide text-hot">{labels[n.kind]}</p>
           <p className="mt-1 whitespace-pre-wrap">{n.body}</p>
           <p className="mt-1 text-xs opacity-70">
             {new Date(n.createdAt).toLocaleString()}
@@ -136,8 +136,8 @@ export function AiRequest({ reading, client, available, onSnapshot }: { reading:
   if (!available.ok) {
     return (
       <div className="panel-night p-4 text-sm">
-        <p className="font-semibold text-vermilion">AI interpretation unavailable</p>
-        <p className="mt-1 text-ink/85">{available.reason}</p>
+        <p className="font-semibold text-hot">AI interpretation unavailable</p>
+        <p className="mt-1 text-cream/85">{available.reason}</p>
       </div>
     );
   }
@@ -156,13 +156,13 @@ export function AiRequest({ reading, client, available, onSnapshot }: { reading:
 
   return (
     <div className="panel-night p-4">
-      <p className="text-sm text-ink/85">
+      <p className="text-sm text-cream/85">
         Want a deeper reading tailored to your question? The AI uses the same cards, positions and the card library — it cannot change your cards.
       </p>
       <button type="button" className="btn btn-primary mt-3" onClick={request} disabled={status === "loading"} aria-describedby="ai-status">
         {status === "loading" ? "Interpreting… (this can take up to a minute)" : "Get a detailed AI interpretation"}
       </button>
-      <p id="ai-status" role="status" aria-live="polite" className="mt-2 text-sm text-vermilion">
+      <p id="ai-status" role="status" aria-live="polite" className="mt-2 text-sm text-hot">
         {status === "error" && `${message} Your reference reading above is still complete.`}
       </p>
     </div>
@@ -202,7 +202,7 @@ export function FollowUpPanel({ reading, client, available, onAdded, onNewPull }
       </h3>
       <p className="text-sm opacity-85">Follow-ups are answered from the cards already in this reading. If a question genuinely needs a new card, we'll say so — the cards are never swapped behind the scenes.</p>
       {reading.followUps.map((f) => (
-        <div key={f.id} className="rounded border border-gold/40 p-3">
+        <div key={f.id} className="rounded border border-line p-3">
           <p className="font-semibold">You asked: {f.question}</p>
           <p className="mt-2 whitespace-pre-wrap">{f.answer.text}</p>
           {f.answer.needsNewPull && (
@@ -227,7 +227,7 @@ export function FollowUpPanel({ reading, client, available, onAdded, onNewPull }
             {status === "loading" ? "Thinking…" : "Ask follow-up"}
           </button>
           {error && (
-            <p role="alert" className="text-sm text-vermilion">
+            <p role="alert" className="text-sm text-hot">
               {error}
             </p>
           )}

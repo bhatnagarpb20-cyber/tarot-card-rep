@@ -45,7 +45,7 @@ export function TarotCard({ cardId, reversed = false, size = "md", priority = fa
 
   return (
     <figure className={`relative aspect-[2/3] shrink-0 ${SIZE_CLASS[size]} ${className}`}>
-      <div className={`h-full w-full overflow-hidden rounded-[var(--radius-card)] shadow-[0_20px_40px_-20px_rgb(0_0_0/0.8)] ring-1 ring-gold/60 ${reversed ? "rotate-180" : ""}`}>
+      <div className={`h-full w-full overflow-hidden rounded-[var(--radius-card)] shadow-[0_24px_50px_-24px_rgb(255_95_168/0.45)] ring-1 ring-cream/25 ${reversed ? "rotate-180" : ""}`}>
         {art?.image ? (
           <picture>
             {art.image.formats
@@ -83,24 +83,28 @@ export function TarotCard({ cardId, reversed = false, size = "md", priority = fa
 
 function PendingCardFace({ name, numeral, suit, label, compact }: { name: string; numeral: string | null; suit: Suit | null; label: string; compact: boolean }) {
   return (
-    <div role="img" aria-label={label} className="relative flex h-full w-full flex-col bg-page-raised p-[5%] text-ink">
-      <div aria-hidden="true" className="absolute inset-[3%] rounded-[calc(var(--radius-card)-4px)] border border-gold/80" />
-      <div aria-hidden="true" className="absolute inset-[5.5%] rounded-[calc(var(--radius-card)-6px)] border border-gold/30" />
-      {/* Arched window */}
-      <div aria-hidden="true" className="relative mx-[6%] mt-[9%] flex flex-1 flex-col items-center justify-center rounded-t-[999px] border-2 border-gold/80 bg-page/60">
-        <span className="absolute -top-[0.9em] flex h-[1.8em] min-w-[1.8em] items-center justify-center rounded-full border border-gold bg-page-sunk px-1 font-[family-name:var(--font-display)] text-[0.7em] text-ink">
-          {numeral ?? <Star size={10} className="text-vermilion" />}
-        </span>
-        {suit ? (
-          <SuitEmblem suit={suit} className="h-1/3 w-1/3 text-gold-ink/70" />
-        ) : (
-          <span className="font-[family-name:var(--font-display)] text-[2.2em] text-gold-ink">{numeral}</span>
-        )}
-        {!compact && <span className="mt-3 px-2 text-center font-[family-name:var(--font-display)] text-[0.55em] uppercase tracking-[0.18em] text-vermilion/90">Illustration in production</span>}
+    <div role="img" aria-label={label} className="relative flex h-full w-full flex-col bg-[radial-gradient(120%_70%_at_50%_0%,var(--color-void-raised),var(--color-void-sunk))] p-[6%] text-cream">
+      <div aria-hidden="true" className="absolute inset-[3%] rounded-[calc(var(--radius-card)-4px)] border border-acid/70" />
+      {/* Portal window: three rainbow bands framing the numeral or suit */}
+      <div aria-hidden="true" className="relative mx-[4%] mt-[6%] flex flex-1 items-center justify-center rounded-t-[999px] border-[0.35em] border-b-0 border-teal">
+        <div className="absolute inset-[0.3em] rounded-t-[999px] border-[0.35em] border-b-0 border-hot" />
+        <div className="absolute inset-[0.95em] rounded-t-[999px] border-[0.35em] border-b-0 border-acid" />
+        <div className="relative flex flex-col items-center">
+          {suit ? (
+            <SuitEmblem suit={suit} className="h-[3.2em] w-[3.2em] text-acid" />
+          ) : (
+            <span className="font-[family-name:var(--font-heading)] text-[2.4em] leading-none text-acid">{numeral}</span>
+          )}
+        </div>
       </div>
       {/* Title plate */}
-      <div aria-hidden="true" className="relative mx-[2%] mb-[4%] mt-[5%] rounded border border-gold/80 bg-page-sunk/80 px-1 py-[4%] text-center">
-        <span className={`block font-[family-name:var(--font-display)] leading-tight ${compact ? "text-[0.5em]" : "text-[0.8em]"}`}>{name}</span>
+      <div aria-hidden="true" className="relative mt-[5%] mb-[2%] text-center">
+        <span className={`block font-[family-name:var(--font-heading)] leading-tight ${compact ? "text-[0.62em]" : "text-[0.95em]"}`}>{name}</span>
+        {!compact && (
+          <span className="mt-1 flex items-center justify-center gap-1 font-[family-name:var(--font-display)] text-[0.42em] font-bold uppercase tracking-[0.16em] text-cream/85">
+            <Star size={6} className="text-hot" /> Art coming soon
+          </span>
+        )}
       </div>
     </div>
   );

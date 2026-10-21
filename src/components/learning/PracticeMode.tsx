@@ -65,7 +65,7 @@ export function PracticeMode() {
           <legend className="text-2xl">Difficulty</legend>
           <div className="mt-3 grid gap-3 sm:grid-cols-3">
             {(Object.keys(DIFFICULTIES) as Difficulty[]).map((d) => (
-              <label key={d} className="block rounded border border-gold-dark/30 p-3 has-[:checked]:border-burgundy has-[:checked]:bg-white/50">
+              <label key={d} className="block rounded border border-line p-3 has-[:checked]:border-hot has-[:checked]:bg-white/50">
                 <span className="flex items-center gap-2 font-semibold">
                   <input type="radio" name="difficulty" checked={difficulty === d} onChange={() => setDifficulty(d)} />
                   {DIFFICULTIES[d].label}
@@ -148,18 +148,18 @@ export function PracticeMode() {
             <h2 className="text-2xl">Feedback on your reasoning</h2>
             {feedback.strengths.length > 0 && (
               <>
-                <h3 className="mt-3 text-lg text-vermilion">What worked well</h3>
+                <h3 className="mt-3 text-lg text-hot">What worked well</h3>
                 <ul className="mt-1 list-disc space-y-1 pl-5">{feedback.strengths.map((s) => <li key={s}>{s}</li>)}</ul>
               </>
             )}
             {feedback.suggestions.length > 0 && (
               <>
-                <h3 className="mt-3 text-lg text-vermilion">To consider next time</h3>
+                <h3 className="mt-3 text-lg text-hot">To consider next time</h3>
                 <ul className="mt-1 list-disc space-y-1 pl-5">{feedback.suggestions.map((s) => <li key={s}>{s}</li>)}</ul>
               </>
             )}
-            <p className="mt-3 text-sm text-ink/80">Several interpretations can be reasonable. Compare your reasoning with the reference below — differences are worth thinking about, not mistakes to fix.</p>
-            <p className="mt-2 text-xs text-ink/70">{saved === "saved" ? "Saved to your practice history." : saved === "error" ? "Couldn't save this exercise." : ""}</p>
+            <p className="mt-3 text-sm text-cream/80">Several interpretations can be reasonable. Compare your reasoning with the reference below — differences are worth thinking about, not mistakes to fix.</p>
+            <p className="mt-2 text-xs text-cream/70">{saved === "saved" ? "Saved to your practice history." : saved === "error" ? "Couldn't save this exercise." : ""}</p>
           </section>
           <InterpretationView snapshot={{ interpretation: reference, generator: "reference", contentVersion: "", createdAt: "" }} headingLevel="h2" />
           <p className="text-center text-sm">

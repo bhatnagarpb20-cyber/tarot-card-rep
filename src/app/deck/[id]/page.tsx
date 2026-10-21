@@ -60,7 +60,7 @@ export default async function CardPage({ params }: { params: Promise<{ id: strin
               <dd className="mt-1">{card.keywords.reversed.join(" · ")}</dd>
             </div>
           </dl>
-          <p className="mt-5 text-lg italic text-ink/90">{card.memoryAid}</p>
+          <p className="mt-5 text-lg italic text-cream/90">{card.memoryAid}</p>
           <ul className="mt-5 flex flex-wrap gap-2 text-sm">
             {[
               ["#symbolism", "Symbolism"],
@@ -89,7 +89,7 @@ export default async function CardPage({ params }: { params: Promise<{ id: strin
         <ul className="space-y-3">
           {card.symbols.map((s) => (
             <li key={s.element} className="flex gap-3">
-              <Star className="mt-2 shrink-0 text-gold-dark" size={10} />
+              <Star className="mt-2 shrink-0 text-acid" size={10} />
               <span>
                 <strong>{s.element}.</strong> {s.meaning}
               </span>
@@ -102,7 +102,7 @@ export default async function CardPage({ params }: { params: Promise<{ id: strin
       </Block>
 
       <Block id="meanings" title="Upright and reversed">
-        <p className="eyebrow !text-xs !text-burgundy">Modern reflective interpretation</p>
+        <p className="eyebrow !text-xs !text-hot">Modern reflective interpretation</p>
         <h3 className="mt-2 text-xl">Upright</h3>
         <p>{card.upright}</p>
         <h3 className="mt-4 text-xl">Reversed</h3>
@@ -113,8 +113,8 @@ export default async function CardPage({ params }: { params: Promise<{ id: strin
       <Block id="contexts" title="In different areas of life">
         <dl className="grid gap-4 sm:grid-cols-2">
           {CONTEXT_KEYS.map((k) => (
-            <div key={k} className="rounded border border-gold-dark/30 p-3">
-              <dt className="font-semibold text-burgundy">{CATEGORY_LABELS[k]}</dt>
+            <div key={k} className="rounded border border-line p-3">
+              <dt className="font-semibold text-hot">{CATEGORY_LABELS[k]}</dt>
               <dd className="mt-1">{card.contexts[k]}</dd>
             </div>
           ))}
@@ -173,7 +173,7 @@ export default async function CardPage({ params }: { params: Promise<{ id: strin
                   <Link href={`/deck/${rc.id}`} className="font-semibold">
                     {rc.name}
                   </Link>
-                  <span className="block text-sm text-ink/80">{r.reason}</span>
+                  <span className="block text-sm text-cream/80">{r.reason}</span>
                 </span>
               </li>
             );
@@ -181,7 +181,7 @@ export default async function CardPage({ params }: { params: Promise<{ id: strin
         </ul>
       </Block>
 
-      <footer className="space-y-4 text-sm text-ink/75">
+      <footer className="space-y-4 text-sm text-cream/75">
         <p>
           <strong>Sources:</strong>{" "}
           {card.sources.map((s, i) => (

@@ -64,11 +64,11 @@ export function ObservationExercise({ cardId, question = "", onDone }: { cardId:
         </button>
       ) : (
         feedback && (
-          <div role="status" aria-live="polite" className="space-y-4 rounded border border-gold-dark/40 bg-white/40 p-4">
+          <div role="status" aria-live="polite" className="space-y-4 rounded border border-line bg-white/40 p-4">
             <p className="font-semibold">{feedback.encouragement}</p>
             {feedback.noticed.length > 0 && (
               <div>
-                <h3 className="text-lg text-burgundy">Traditional symbols you noticed</h3>
+                <h3 className="text-lg text-hot">Traditional symbols you noticed</h3>
                 <ul className="mt-1 list-disc space-y-1 pl-5">
                   {feedback.noticed.map((s) => (
                     <li key={s.element}>
@@ -80,7 +80,7 @@ export function ObservationExercise({ cardId, question = "", onDone }: { cardId:
             )}
             {feedback.notYet.length > 0 && (
               <div>
-                <h3 className="text-lg text-burgundy">Symbols to look for next time</h3>
+                <h3 className="text-lg text-hot">Symbols to look for next time</h3>
                 <ul className="mt-1 list-disc space-y-1 pl-5">
                   {feedback.notYet.map((s) => (
                     <li key={s.element}>

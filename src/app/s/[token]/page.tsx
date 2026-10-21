@@ -49,7 +49,7 @@ export default async function SharedReadingPage({ params }: { params: Promise<{ 
         </ol>
       </header>
       {r.interpretation && <InterpretationView snapshot={{ interpretation: r.interpretation, generator: r.interpretation.source === "ai" ? "AI" : "reference", contentVersion: "", createdAt: r.createdAt }} showCards={false} />}
-      <p className="text-center text-sm">Tarot is shared here as reflection, not prediction. <Link href="/">Explore The Daily Arcana</Link></p>
+      <p className="text-center text-sm">Tarot is shared here as reflection, not prediction. <Link href="/">Explore Inhale Exhale</Link></p>
     </div>
   );
 }

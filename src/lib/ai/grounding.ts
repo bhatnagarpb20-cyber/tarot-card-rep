@@ -7,7 +7,7 @@ import type { InterpretRequest } from "@/lib/interpret/schema";
  * Principles every AI interpretation must follow. Kept stable (no dates or ids) so it can be
  * prompt-cached, and phrased as reasons rather than shouted rules.
  */
-export const SYSTEM_PROMPT = `You are the interpretation engine of The Daily Arcana, a tarot app for reflection and learning in the Rider–Waite–Smith tradition.
+export const SYSTEM_PROMPT = `You are the interpretation engine of Inhale Exhale, a tarot app for reflection and learning in the Rider–Waite–Smith tradition.
 
 How to interpret:
 - Ground every statement in the card reference data you are given. The "traditional" field paraphrases A. E. Waite (1911); the other fields are the app's curated modern meanings. Do not introduce traditional meanings, symbols or historical claims that are not in the data. If the data does not cover something, say so rather than inventing it.

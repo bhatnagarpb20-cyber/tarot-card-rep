@@ -22,7 +22,7 @@ export default function AboutPage() {
       <SectionHeading eyebrow="How this app works" title="Privacy & methodology" />
 
       <Section title="What tarot is — and isn't — here">
-        <p>The Daily Arcana treats tarot as a symbolic and reflective practice. There is no scientific evidence that tarot predicts future events, and nothing in this app should be taken as a prediction or guarantee.</p>
+        <p>Inhale Exhale treats tarot as a symbolic and reflective practice. There is no scientific evidence that tarot predicts future events, and nothing in this app should be taken as a prediction or guarantee.</p>
         <p>Readings never claim to know another person's private thoughts, feelings, fidelity or intentions, and never promise outcomes such as a job, relationship or financial result. For health, legal, financial or safety decisions, please seek qualified professional help.</p>
       </Section>
 

@@ -50,7 +50,7 @@ export function Quiz({ questions, subjectType, subjectId, title = "Knowledge che
               {qi + 1}. {q.question}
             </legend>
             {q.options.map((opt, oi) => (
-              <label key={opt} className={`flex min-h-11 items-start gap-3 rounded border px-3 py-2 ${submitted && oi === q.answerIndex ? "border-sage bg-sage/15" : submitted && answers[qi] === oi ? "border-burgundy bg-burgundy/10" : "border-gold-dark/30"}`}>
+              <label key={opt} className={`flex min-h-11 items-start gap-3 rounded border px-3 py-2 ${submitted && oi === q.answerIndex ? "border-teal bg-teal/15" : submitted && answers[qi] === oi ? "border-hot bg-hot/10" : "border-line"}`}>
                 <input type="radio" className="mt-1.5" name={`${id}-q${qi}`} checked={answers[qi] === oi} disabled={submitted} onChange={() => setAnswers((a) => a.map((v, i) => (i === qi ? oi : v)))} />
                 <span>
                   {opt}
@@ -69,7 +69,7 @@ export function Quiz({ questions, subjectType, subjectId, title = "Knowledge che
         );
       })}
       {missing && (
-        <p role="alert" className="font-semibold text-burgundy">
+        <p role="alert" className="font-semibold text-hot">
           Please answer every question before checking.
         </p>
       )}

@@ -76,7 +76,7 @@ export function QuestionReading() {
   if (step === "result" && reading) {
     return (
       <div className="mx-auto max-w-4xl">
-        {parentId && <p className="mb-6 rounded border border-gold/40 p-3 text-sm">This is a new pull, saved as its own reading and linked to the earlier one. The earlier reading's cards are unchanged.</p>}
+        {parentId && <p className="mb-6 rounded border border-line p-3 text-sm">This is a new pull, saved as its own reading and linked to the earlier one. The earlier reading's cards are unchanged.</p>}
         <ReadingResult reading={reading} client={client} onNewPull={newPull} />
         <div className="mt-10 text-center">
           <button type="button" className="btn btn-ghost" onClick={newPull}>
@@ -89,7 +89,7 @@ export function QuestionReading() {
 
   return (
     <div className="mx-auto max-w-4xl">
-      {mode === "guest" && <p className="mb-6 rounded-lg border border-gold/40 bg-page-sunk/40 p-3 text-sm">Guest mode: readings are saved only in this browser.</p>}
+      {mode === "guest" && <p className="mb-6 rounded-lg border border-line bg-void-sunk/40 p-3 text-sm">Guest mode: readings are saved only in this browser.</p>}
 
       {step === "setup" && (
         <form onSubmit={start} className="space-y-8" noValidate>
@@ -105,19 +105,19 @@ export function QuestionReading() {
               {QUESTION_SPREADS.map((id) => {
                 const s = SPREADS[id];
                 return (
-                  <label key={id} className="panel-night block cursor-pointer p-4 has-[:checked]:border-vermilion has-[:checked]:shadow-[inset_0_0_0_2px_var(--color-gold)]">
+                  <label key={id} className="panel-night block cursor-pointer p-4 has-[:checked]:border-hot has-[:checked]:shadow-[inset_0_0_0_2px_var(--color-hot)]">
                     <span className="flex items-center gap-2">
                       <input type="radio" name="spread" value={id} checked={spreadId === id} onChange={() => setSpreadId(id)} />
-                      <span className="font-[family-name:var(--font-heading)] text-xl text-vermilion">{s.name}</span>
+                      <span className="font-[family-name:var(--font-heading)] text-xl text-hot">{s.name}</span>
                     </span>
-                    <span className="mt-2 block text-sm text-ink/85">{s.description}</span>
+                    <span className="mt-2 block text-sm text-cream/85">{s.description}</span>
                     <ol className="mt-3 space-y-1 text-sm">
                       {s.positions.map((p, i) => (
                         <li key={p.key}>
                           <strong>
                             {i + 1}. {p.label}:
                           </strong>{" "}
-                          <span className="text-ink/80">{p.meaning}</span>
+                          <span className="text-cream/80">{p.meaning}</span>
                         </li>
                       ))}
                     </ol>
@@ -132,7 +132,7 @@ export function QuestionReading() {
               <legend className="text-2xl">2. Life area</legend>
               <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-4">
                 {CATEGORIES.map((c) => (
-                  <label key={c} className="flex min-h-11 items-center gap-2 rounded border border-gold-dark/30 px-3 has-[:checked]:border-burgundy has-[:checked]:bg-white/50">
+                  <label key={c} className="flex min-h-11 items-center gap-2 rounded border border-line px-3 has-[:checked]:border-hot has-[:checked]:bg-white/50">
                     <input type="radio" name="category" checked={category === c} onChange={() => setCategory(c)} />
                     {CATEGORY_LABELS[c]}
                   </label>
@@ -162,7 +162,7 @@ export function QuestionReading() {
               Let me write my own interpretation before seeing the app's
             </label>
             {error && (
-              <p role="alert" className="font-semibold text-burgundy">
+              <p role="alert" className="font-semibold text-hot">
                 {error}
               </p>
             )}
@@ -193,12 +193,12 @@ export function QuestionReading() {
           </h1>
           <ol className="mx-auto mt-6 flex max-w-2xl flex-wrap justify-center gap-3" aria-label="Spread positions">
             {spread.positions.map((p, i) => (
-              <li key={p.key} className={`rounded-full border px-3 py-1 text-sm ${i < picked.length ? "border-gold bg-gold/20 text-vermilion" : i === picked.length ? "border-vermilion" : "border-gold/30 text-ink/70"}`}>
+              <li key={p.key} className={`rounded-full border px-3 py-1 text-sm ${i < picked.length ? "border-line bg-acid/20 text-hot" : i === picked.length ? "border-hot" : "border-line text-cream/70"}`}>
                 {i + 1}. {p.label} {i < picked.length ? "✓" : i === picked.length ? "← next" : ""}
               </li>
             ))}
           </ol>
-          <p className="mt-3 text-sm text-ink/80" role="status" aria-live="polite">
+          <p className="mt-3 text-sm text-cream/80" role="status" aria-live="polite">
             {picked.length < spread.positions.length ? `Choose a card for “${spread.positions[picked.length].label}”: ${spread.positions[picked.length].meaning}` : "Drawing your cards…"}
           </p>
           <ul className="mx-auto mt-8 grid max-w-3xl grid-cols-5 gap-2 sm:grid-cols-7 md:grid-cols-[repeat(13,minmax(0,1fr))]" aria-label="Face-down cards">
@@ -211,7 +211,7 @@ export function QuestionReading() {
             ))}
           </ul>
           {error && (
-            <p role="alert" className="mt-6 text-vermilion">
+            <p role="alert" className="mt-6 text-hot">
               {error}
             </p>
           )}
@@ -223,7 +223,7 @@ export function QuestionReading() {
           <h1 ref={headingRef} tabIndex={-1} className="text-3xl">
             Your cards
           </h1>
-          <p className="mt-1 text-sm text-ink/80">Turn each card in order.</p>
+          <p className="mt-1 text-sm text-cream/80">Turn each card in order.</p>
           <ol className="mt-8 flex flex-wrap justify-center gap-6">
             {reading.cards.map((c, i) => (
               <li key={c.position} className="flex flex-col items-center gap-2">

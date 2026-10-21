@@ -55,7 +55,7 @@ export function InterpretationExercise({ cardId }: { cardId: string }) {
         Compare with the reference
       </button>
       {shown && (
-        <div role="status" className="rounded border border-gold-dark/40 bg-white/40 p-4">
+        <div role="status" className="rounded border border-line bg-white/40 p-4">
           <p>
             <strong>Reference meaning in {CATEGORY_LABELS[category].toLowerCase()}:</strong> {card.contexts[category]}
           </p>

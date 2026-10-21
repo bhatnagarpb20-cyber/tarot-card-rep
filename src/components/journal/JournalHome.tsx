@@ -46,17 +46,26 @@ export function JournalHome() {
   return (
     <div className="space-y-8">
       <SectionHeading eyebrow={mode === "account" ? "Private to you" : "Saved in this browser"} title="Your journal" intro="Your readings, reflections and patterns. Everything here is private by default." />
-      {error && <p role="alert" className="text-center text-vermilion">{error}</p>}
+      {error && <p role="alert" className="text-center text-hot">{error}</p>}
 
-      <div role="tablist" aria-label="Journal sections" className="flex justify-center gap-2">
+      <div role="tablist" aria-label="Journal sections" className="mx-auto flex w-full max-w-md rounded-full border border-line bg-void-sunk/70 p-1">
         {(
           [
             ["readings", "Readings"],
             ["entries", "Entries"],
-            ["patterns", "Patterns & progress"],
+            ["patterns", "Patterns"],
           ] as const
         ).map(([key, label]) => (
-          <button key={key} role="tab" type="button" aria-selected={tab === key} aria-controls={`panel-${key}`} id={`tab-${key}`} className={`btn ${tab === key ? "btn-primary" : "btn-ghost"}`} onClick={() => setTab(key)}>
+          <button
+            key={key}
+            role="tab"
+            type="button"
+            aria-selected={tab === key}
+            aria-controls={`panel-${key}`}
+            id={`tab-${key}`}
+            className={`min-h-11 flex-1 cursor-pointer rounded-full px-3 text-xs font-bold uppercase tracking-[0.1em] transition-colors sm:text-sm ${tab === key ? "bg-acid text-void" : "text-cream/80 hover:text-cream"}`}
+            onClick={() => setTab(key)}
+          >
             {label}
           </button>
         ))}
@@ -106,7 +115,7 @@ export function JournalHome() {
             <ul className="space-y-4">
               {filtered.map((r) => (
                 <li key={r.id}>
-                  <Link href={`/readings/${r.id}`} className="panel-night flex gap-4 p-4 text-ink no-underline hover:border-gold">
+                  <Link href={`/readings/${r.id}`} className="panel-night flex gap-4 p-4 text-cream no-underline hover:border-line">
                     <div className="flex shrink-0 -space-x-6">
                       {r.cards.slice(0, 3).map((c) => (
                         <TarotCard key={c.position} cardId={c.cardId} reversed={c.reversed} size="xs" />
@@ -118,7 +127,7 @@ export function JournalHome() {
                         {r.bookmarked && " · ★"}
                       </p>
                       <p className="mt-1 font-[family-name:var(--font-heading)] text-xl">{r.question ? `“${r.question}”` : r.cards.map((c) => requireCard(c.cardId).name).join(", ")}</p>
-                      <p className="mt-1 text-sm text-ink/75">
+                      <p className="mt-1 text-sm text-cream/75">
                         {r.cards.map((c) => `${requireCard(c.cardId).name}${c.reversed ? " (rev.)" : ""}`).join(" · ")}
                         {r.journal.length > 0 && ` — ${r.journal.length} note${r.journal.length > 1 ? "s" : ""}`}
                         {r.snapshots.some((s) => s.interpretation.source === "ai") && " — AI interpretation"}
@@ -136,7 +145,7 @@ export function JournalHome() {
         <section id="panel-entries" role="tabpanel" aria-labelledby="tab-entries" className="mx-auto max-w-3xl space-y-6">
           <NoteComposer onSave={async (body) => { const n = await client.addNote({ kind: "free", body, resonance: null }); setNotes((ns) => [n, ...ns]); }} />
           {notes.length === 0 ? (
-            <p className="text-center text-ink/80">No free entries yet. Use them for observations, dreams or patterns you notice between readings.</p>
+            <p className="text-center text-cream/80">No free entries yet. Use them for observations, dreams or patterns you notice between readings.</p>
           ) : (
             <ul className="space-y-4">
               {notes.map((n) => (
@@ -175,8 +184,8 @@ export function JournalHome() {
               ["Reversed share", stats.reversedShare === null ? "—" : `${Math.round(stats.reversedShare * 100)}%`],
             ].map(([label, value]) => (
               <div key={label} className="panel-night p-4 text-center">
-                <dt className="text-sm text-ink/80">{label}</dt>
-                <dd className="mt-1 font-[family-name:var(--font-heading)] text-3xl text-vermilion">{value}</dd>
+                <dt className="text-sm text-cream/80">{label}</dt>
+                <dd className="mt-1 font-[family-name:var(--font-heading)] text-3xl text-hot">{value}</dd>
               </div>
             ))}
           </dl>
@@ -257,7 +266,7 @@ function NoteComposer({ onSave }: { onSave: (body: string) => Promise<void> }) {
         </button>
         <p role="status" className="text-sm">{status === "saved" && "Saved."}</p>
       </div>
-      {error && <p role="alert" className="text-sm font-semibold text-burgundy">{error}</p>}
+      {error && <p role="alert" className="text-sm font-semibold text-hot">{error}</p>}
     </form>
   );
 }

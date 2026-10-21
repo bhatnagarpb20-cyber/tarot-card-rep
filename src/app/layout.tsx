@@ -6,42 +6,27 @@ import { SiteNav } from "@/components/layout/SiteNav";
 import { SessionProvider } from "@/components/session/SessionContext";
 import { getCurrentUser } from "@/lib/supabase/server";
 
-const cinzel = localFont({
-  src: [
-    { path: "../fonts/cinzel-latin-500-normal.woff2", weight: "500" },
-    { path: "../fonts/cinzel-latin-600-normal.woff2", weight: "600" },
-  ],
-  variable: "--font-cinzel",
+const gloock = localFont({
+  src: "../fonts/gloock-latin-400-normal.woff2",
+  weight: "400",
+  variable: "--font-gloock",
   display: "swap",
 });
 
-const cormorant = localFont({
-  src: [
-    { path: "../fonts/cormorant-garamond-latin-500-normal.woff2", weight: "500" },
-    { path: "../fonts/cormorant-garamond-latin-600-normal.woff2", weight: "600" },
-    { path: "../fonts/cormorant-garamond-latin-500-italic.woff2", weight: "500", style: "italic" },
-  ],
-  variable: "--font-cormorant",
-  display: "swap",
-});
-
-const sourceSerif = localFont({
-  src: [
-    { path: "../fonts/source-serif-4-latin-400-normal.woff2", weight: "400" },
-    { path: "../fonts/source-serif-4-latin-600-normal.woff2", weight: "600" },
-    { path: "../fonts/source-serif-4-latin-400-italic.woff2", weight: "400", style: "italic" },
-  ],
-  variable: "--font-source-serif",
+const bricolage = localFont({
+  src: "../fonts/bricolage-grotesque-latin-variable.woff2",
+  weight: "200 800",
+  variable: "--font-bricolage",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: { default: "The Daily Arcana", template: "%s · The Daily Arcana" },
-  description: "A tarot companion for daily reflection, thoughtful readings, learning all 78 cards and keeping a private journal.",
+  title: { default: "Inhale Exhale — tarot for the rest of us", template: "%s · Inhale Exhale" },
+  description: "Pull a card, breathe, reflect. A tarot app for beginners: daily cards, readings, all 78 cards explained and a private journal.",
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f5ecd8",
+  themeColor: "#0f0a1a",
   width: "device-width",
   initialScale: 1,
 };
@@ -49,9 +34,9 @@ export const viewport: Viewport = {
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const session = await getCurrentUser();
   return (
-    <html lang="en" className={`${cinzel.variable} ${cormorant.variable} ${sourceSerif.variable}`}>
+    <html lang="en" className={`${gloock.variable} ${bricolage.variable}`}>
       <body>
-        <a href="#main" className="sr-only-focusable fixed left-4 top-2 z-50 rounded bg-gold px-3 py-2 text-ink">
+        <a href="#main" className="sr-only-focusable fixed left-4 top-2 z-50 rounded bg-acid px-3 py-2 text-void">
           Skip to main content
         </a>
         <SessionProvider signedIn={Boolean(session)}>
@@ -60,7 +45,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
             {children}
           </main>
         </SessionProvider>
-        <footer className="border-t border-gold/20 px-4 pb-24 pt-8 text-center text-sm text-ink/70 md:pb-8">
+        <footer className="border-t border-line px-4 pb-24 pt-8 text-center text-sm text-cream/70 md:pb-8">
           <p>
             Tarot is presented here as a symbolic, reflective practice — not a way to predict the future.{" "}
             <Link href="/about">Privacy &amp; methodology</Link>

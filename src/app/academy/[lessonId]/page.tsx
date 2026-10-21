@@ -32,7 +32,7 @@ export default async function LessonPage({ params }: { params: Promise<{ lessonI
           <p className="eyebrow">{course.title} · Lesson {index + 1} of {course.lessons.length}</p>
           <h1 className="mt-2 text-4xl sm:text-5xl">{lesson.title}</h1>
           <Divider className="mt-4" />
-          <p className="mt-4 text-lg text-ink/85">{lesson.summary}</p>
+          <p className="mt-4 text-lg text-cream/85">{lesson.summary}</p>
         </header>
 
         <section aria-labelledby="obj" className="panel-night p-5">
@@ -44,7 +44,7 @@ export default async function LessonPage({ params }: { params: Promise<{ lessonI
           <ul className="flex flex-wrap justify-center gap-4" aria-label="Cards in this lesson">
             {lesson.cards.map((id) => (
               <li key={id} className="text-center">
-                <Link href={`/deck/${id}`} className="block text-ink no-underline">
+                <Link href={`/deck/${id}`} className="block text-cream no-underline">
                   <TarotCard cardId={id} size="sm" />
                   <span className="mt-1 block text-sm">{requireCard(id).name}</span>
                 </Link>
@@ -57,14 +57,14 @@ export default async function LessonPage({ params }: { params: Promise<{ lessonI
           {lesson.sections.map((s) => (
             <section key={s.heading}>
               <h2 className="text-2xl">{s.heading}</h2>
-              {s.note && <p className="eyebrow !text-xs !text-burgundy">{s.note}</p>}
+              {s.note && <p className="eyebrow !text-xs !text-hot">{s.note}</p>}
               <div className="mt-2">{s.paragraphs.map((p) => <p key={p}>{p}</p>)}</div>
             </section>
           ))}
           <section>
             <h2 className="text-2xl">Examples</h2>
             {lesson.examples.map((e) => (
-              <div key={e.title} className="mt-3 rounded border border-gold-dark/30 bg-white/40 p-3">
+              <div key={e.title} className="mt-3 rounded border border-line bg-white/40 p-3">
                 <h3 className="font-semibold">{e.title}</h3>
                 <p>{e.body}</p>
               </div>

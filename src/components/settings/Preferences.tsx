@@ -85,7 +85,7 @@ export function PreferencesForm({ onboarding = false }: { onboarding?: boolean }
         <Toggle id="wbr" checked={prefs.writeBeforeReveal} onChange={(v) => set("writeBeforeReveal", v)} label="Write my own interpretation before seeing the app's" hint="Recommended — it's the best way to become a confident reader." />
         {mode === "account" && <Toggle id="ai" checked={prefs.aiInterpretations} onChange={(v) => set("aiInterpretations", v)} label="Offer AI interpretations" hint="When off, you'll only see reference readings from the card library and nothing is sent to an AI provider." />}
       </fieldset>
-      {error && <p role="alert" className="font-semibold text-burgundy">{error}</p>}
+      {error && <p role="alert" className="font-semibold text-hot">{error}</p>}
       <div className="flex items-center gap-3">
         <button type="submit" className="btn btn-primary" disabled={status === "saving"}>
           {status === "saving" ? "Saving…" : onboarding ? "Save and draw my first card" : "Save settings"}
@@ -157,7 +157,7 @@ export function DataControls() {
         <button type="submit" className="btn btn-ghost">Sign out</button>
       </form>
       <form
-        className="space-y-2 rounded border border-burgundy/60 p-4"
+        className="space-y-2 rounded border border-hot/60 p-4"
         onSubmit={async (e) => {
           e.preventDefault();
           setBusy(true);
@@ -171,7 +171,7 @@ export function DataControls() {
           }
         }}
       >
-        <h3 className="text-xl text-burgundy">Delete my account</h3>
+        <h3 className="text-xl text-hot">Delete my account</h3>
         <p className="text-sm">This permanently deletes your account, readings, journal, progress and share links. Download your data first if you want a copy.</p>
         <label htmlFor="confirm-delete" className="block text-sm font-semibold">Type DELETE to confirm</label>
         <input id="confirm-delete" className="field" value={confirm} onChange={(e) => setConfirm(e.target.value)} autoComplete="off" />

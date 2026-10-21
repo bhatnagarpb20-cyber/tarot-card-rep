@@ -9,7 +9,7 @@ function Unavailable() {
     <div className="panel mx-auto max-w-md p-6 text-center">
       <h1 className="text-3xl">Accounts aren't set up yet</h1>
       <p className="mt-3">
-        This copy of The Daily Arcana hasn't been connected to Supabase, so sign-in is unavailable. You can still use everything in <strong>guest mode</strong> — readings and notes are saved in this browser.
+        This copy of Inhale Exhale hasn't been connected to Supabase, so sign-in is unavailable. You can still use everything in <strong>guest mode</strong> — readings and notes are saved in this browser.
       </p>
       <p className="mt-3 text-sm opacity-80">Site owner: add the Supabase environment variables described in the README.</p>
       <Link href="/daily" className="btn btn-primary mt-5">
@@ -77,7 +77,7 @@ export function LoginForm() {
         <Field id="email" label="Email" type="email" value={email} onChange={setEmail} autoComplete="email" />
         <Field id="password" label="Password" type="password" value={password} onChange={setPassword} autoComplete="current-password" />
         {error && (
-          <p role="alert" className="text-sm font-semibold text-burgundy">
+          <p role="alert" className="text-sm font-semibold text-hot">
             {error}
           </p>
         )}
@@ -133,7 +133,7 @@ export function SignupForm() {
           </span>
         </label>
         {state.status === "error" && (
-          <p role="alert" className="text-sm font-semibold text-burgundy">
+          <p role="alert" className="text-sm font-semibold text-hot">
             {state.message}
           </p>
         )}
@@ -175,7 +175,7 @@ export function ResetPasswordForm() {
         >
           <Field id="email" label="Email" type="email" value={email} onChange={setEmail} autoComplete="email" />
           {error && (
-            <p role="alert" className="text-sm font-semibold text-burgundy">
+            <p role="alert" className="text-sm font-semibold text-hot">
               {error}
             </p>
           )}
@@ -211,7 +211,7 @@ export function UpdatePasswordForm() {
       >
         <Field id="password" label="New password" type="password" value={password} onChange={setPassword} autoComplete="new-password" minLength={8} />
         {error && (
-          <p role="alert" className="text-sm font-semibold text-burgundy">
+          <p role="alert" className="text-sm font-semibold text-hot">
             {error}
           </p>
         )}

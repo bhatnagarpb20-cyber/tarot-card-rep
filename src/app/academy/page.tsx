@@ -12,17 +12,17 @@ export default function AcademyPage() {
       <div className="space-y-12">
         <SectionHeading eyebrow="Learn to read for yourself" title="The tarot academy" intro="Structured lessons, all 78 card lessons, and practice that builds your own interpretive skill — so you can read without relying on anyone else's interpretation." />
         <div className="grid gap-4 sm:grid-cols-3">
-          <Link href="/academy/practice" className="panel-night block p-5 text-ink no-underline hover:border-gold">
-            <h2 className="text-2xl text-vermilion">Practice mode</h2>
-            <p className="mt-1 text-sm text-ink/85">Draw a card, interpret it unaided, then compare with the reference. Beginner to advanced.</p>
+          <Link href="/academy/practice" className="panel-night block p-5 text-cream no-underline hover:border-line">
+            <h2 className="text-2xl text-hot">Practice mode</h2>
+            <p className="mt-1 text-sm text-cream/85">Draw a card, interpret it unaided, then compare with the reference. Beginner to advanced.</p>
           </Link>
-          <Link href="/deck" className="panel-night block p-5 text-ink no-underline hover:border-gold">
-            <h2 className="text-2xl text-vermilion">78 card lessons</h2>
-            <p className="mt-1 text-sm text-ink/85">Symbolism, meanings, observation exercises and a quiz for every card.</p>
+          <Link href="/deck" className="panel-night block p-5 text-cream no-underline hover:border-line">
+            <h2 className="text-2xl text-hot">78 card lessons</h2>
+            <p className="mt-1 text-sm text-cream/85">Symbolism, meanings, observation exercises and a quiz for every card.</p>
           </Link>
-          <Link href="/journal" className="panel-night block p-5 text-ink no-underline hover:border-gold">
-            <h2 className="text-2xl text-vermilion">Your progress</h2>
-            <p className="mt-1 text-sm text-ink/85">Lessons, quizzes and practice history in your journal's Patterns tab.</p>
+          <Link href="/journal" className="panel-night block p-5 text-cream no-underline hover:border-line">
+            <h2 className="text-2xl text-hot">Your progress</h2>
+            <p className="mt-1 text-sm text-cream/85">Lessons, quizzes and practice history in your journal's Patterns tab.</p>
           </Link>
         </div>
         {COURSES.map((course) => (
@@ -37,7 +37,7 @@ export default function AcademyPage() {
                     <Link href={`/academy/${l.id}`} className="font-[family-name:var(--font-heading)] text-xl">{l.title}</Link>
                     <p className="text-sm opacity-80">{l.summary}</p>
                   </div>
-                  <span className="rounded bg-page-sunk px-2 py-1"><LessonStatus lessonId={l.id} /></span>
+                  <span className="rounded bg-void-sunk px-2 py-1"><LessonStatus lessonId={l.id} /></span>
                 </li>
               ))}
             </ol>
