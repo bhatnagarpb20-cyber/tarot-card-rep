@@ -12,6 +12,9 @@ import { CardBack } from "@/components/cards/CardBack";
 import { InterpretationView } from "@/components/reading/InterpretationView";
 import { AiRequest, FollowUpPanel, JournalComposer, SavedNotes } from "@/components/reading/ReadingTools";
 import { Divider, Star } from "@/components/ornament/Ornaments";
+import { SparkleBurst } from "@/components/cards/SparkleBurst";
+import { Tilt } from "@/components/cards/Tilt";
+import { buzz, playFlip, playPick, playReveal, playShuffle, playTap, startBreath, stopBreath } from "@/lib/sound/sfx";
 
 type Phase = "loading" | "welcome" | "intention" | "shuffling" | "choose" | "revealing" | "impressions" | "interpretation" | "error";
 
@@ -84,9 +87,17 @@ export function DailyRitual({ mode }: { mode: StorageMode }) {
     load();
   }, [load]);
 
+  // The breathing pad plays only while the breathing orb is on screen.
+  useEffect(() => {
+    if (phase !== "intention") return;
+    startBreath();
+    return stopBreath;
+  }, [phase]);
+
   function startShuffle() {
     setPhase("shuffling");
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!reduced) playShuffle(2200);
     window.setTimeout(() => setPhase("choose"), reduced ? 50 : 2200);
   }
 
@@ -94,6 +105,8 @@ export function DailyRitual({ mode }: { mode: StorageMode }) {
     if (chosen !== null) return;
     setChosen(index);
     setError(null);
+    playPick();
+    buzz(12);
     try {
       // The card is drawn now, by a secure random generator. Your question never affects which card appears.
       const { reading, existing } = await client.create({
@@ -110,7 +123,14 @@ export function DailyRitual({ mode }: { mode: StorageMode }) {
       if (isExtra) setExtras((x) => [...x, reading]);
       else setDaily(reading);
       setPhase("revealing");
-      window.setTimeout(() => setFlipped(true), 60);
+      window.setTimeout(() => {
+        setFlipped(true);
+        playFlip();
+      }, 60);
+      window.setTimeout(() => {
+        playReveal();
+        buzz([15, 40, 25]);
+      }, 650);
       const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       window.setTimeout(() => setPhase(prefs.writeBeforeReveal && !existing ? "impressions" : "interpretation"), reduced ? 300 : 1400);
     } catch (e) {
@@ -186,7 +206,7 @@ export function DailyRitual({ mode }: { mode: StorageMode }) {
           <p className="mx-auto mt-5 max-w-xl text-cream/85">
             Take a moment for yourself. You'll pause, set an intention, shuffle and choose one card to reflect on today. Your card is saved, so it will be the same if you come back later.
           </p>
-          <button type="button" className="btn btn-primary mt-8" onClick={() => setPhase("intention")}>
+          <button type="button" className="btn btn-primary mt-8" onClick={() => { playTap(); setPhase("intention"); }}>
             Begin the ritual
           </button>
         </section>
@@ -291,7 +311,9 @@ export function DailyRitual({ mode }: { mode: StorageMode }) {
                     aria-label={`Face-down card ${i + 1} of ${FACE_DOWN_COUNT}`}
                     className={`block aspect-[2/3] w-20 rounded-[var(--radius-card)] transition-transform duration-300 hover:-translate-y-3 focus-visible:-translate-y-3 sm:w-24 ${chosen === i ? "-translate-y-4" : ""}`}
                   >
-                    <CardBack />
+                    <div className="float-card h-full" style={{ animationDelay: `${i * -0.45}s` }}>
+                      <CardBack />
+                    </div>
                   </button>
                 </li>
               );
@@ -312,7 +334,8 @@ export function DailyRitual({ mode }: { mode: StorageMode }) {
 
       {(phase === "revealing" || phase === "impressions") && current && card && drawn && (
         <section className="text-center">
-          <div className="flip-scene mx-auto aspect-[2/3] w-64 sm:w-72">
+          <div className="flip-scene relative mx-auto aspect-[2/3] w-64 sm:w-72">
+            {flipped && <SparkleBurst />}
             <div className="flip-inner" data-flipped={flipped}>
               <div className="flip-face">
                 <CardBack />
@@ -361,7 +384,9 @@ export function DailyRitual({ mode }: { mode: StorageMode }) {
               {current.question && <> · “{current.question}”</>}
             </p>
             <div className="mt-6 flex justify-center">
-              <TarotCard cardId={card.id} reversed={drawn.reversed} size="lg" priority />
+              <Tilt>
+                <TarotCard cardId={card.id} reversed={drawn.reversed} size="lg" priority />
+              </Tilt>
             </div>
           </header>
 

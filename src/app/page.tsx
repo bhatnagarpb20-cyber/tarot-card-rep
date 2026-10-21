@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { TarotCard } from "@/components/cards/TarotCard";
+import { Tilt } from "@/components/cards/Tilt";
 import { CornerFlourish, Divider, RainbowArch, Star } from "@/components/ornament/Ornaments";
 
 const FEATURES = [
@@ -46,7 +47,9 @@ export default function Home() {
           <div className="relative flex items-end justify-center gap-2 pb-6 pt-20">
             {/* Side cards tuck under the centre card so the fan fits a phone screen. */}
             <TarotCard cardId="major-00-the-fool" size="sm" className="-mr-8 translate-y-3 -rotate-[8deg] sm:-mr-4" />
-            <TarotCard cardId="major-01-the-magician" size="md" priority className="z-10" />
+            <Tilt className="z-10">
+              <TarotCard cardId="major-01-the-magician" size="md" priority />
+            </Tilt>
             <TarotCard cardId="major-02-the-high-priestess" size="sm" className="-ml-8 translate-y-3 rotate-[8deg] sm:-ml-4" />
           </div>
         </div>

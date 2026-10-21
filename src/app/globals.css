@@ -385,3 +385,58 @@ html[data-reduced-motion="true"] *::after {
 .ticker {
   animation: ticker 40s linear infinite;
 }
+
+/* Card tilt (see components/cards/Tilt.tsx) with a moving glare highlight. */
+.tilt {
+  position: relative;
+  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 220ms var(--ease-ritual);
+  transform-style: preserve-3d;
+}
+
+.tilt::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-card);
+  background: radial-gradient(circle at var(--gx, 50%) var(--gy, 50%), rgb(255 255 255 / 0.28), transparent 55%);
+  opacity: var(--glare, 0);
+  transition: opacity 220ms var(--ease-ritual);
+  pointer-events: none;
+  mix-blend-mode: soft-light;
+}
+
+/* Reveal sparkles fly outward and fade. */
+@keyframes sparkle-out {
+  0% {
+    transform: rotate(var(--angle)) translateY(0) scale(0.2);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(var(--angle)) translateY(calc(var(--distance) * -1)) scale(1) rotate(90deg);
+    opacity: 0;
+  }
+}
+
+.sparkle {
+  opacity: 0;
+  animation: sparkle-out 1100ms var(--ease-ritual) both;
+}
+
+/* Face-down cards drift gently while you choose. */
+@keyframes float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -6px;
+  }
+}
+
+.float-card {
+  animation: float 3.2s ease-in-out infinite;
+}

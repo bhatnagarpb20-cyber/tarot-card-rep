@@ -7,6 +7,7 @@ import type { SavedReading } from "@/lib/readings/types";
 import { SPREADS, type SpreadId } from "@/lib/tarot/spreads";
 import { CATEGORIES, CATEGORY_LABELS, type Category } from "@/lib/tarot/types";
 import { CardBack } from "@/components/cards/CardBack";
+import { buzz, playFlip, playPick, playReveal, playShuffle } from "@/lib/sound/sfx";
 import { TarotCard } from "@/components/cards/TarotCard";
 import { useStorageMode } from "@/components/session/SessionContext";
 import { JournalComposer } from "./ReadingTools";
@@ -47,6 +48,7 @@ export function QuestionReading() {
     setPicked([]);
     setStep("shuffling");
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!reduced) playShuffle(1800);
     window.setTimeout(() => setStep("choose"), reduced ? 50 : 1800);
   }
 
@@ -54,6 +56,8 @@ export function QuestionReading() {
     if (picked.includes(i) || picked.length >= spread.positions.length) return;
     const next = [...picked, i];
     setPicked(next);
+    playPick();
+    buzz(12);
     if (next.length < spread.positions.length) return;
     try {
       const { reading } = await client.create({ kind: "question", spread: spreadId, category, question: question.trim(), context: context.trim(), timezone: browserTimeZone(), parentReadingId: parentId });
@@ -230,7 +234,12 @@ export function QuestionReading() {
                 <span className="eyebrow">{spread.positions[c.position].label}</span>
                 <div className="flip-scene aspect-[2/3] w-32 sm:w-40">
                   <div className="flip-inner" data-flipped={i < revealed}>
-                    <button type="button" className="flip-face" disabled={i !== revealed} onClick={() => setRevealed((r) => r + 1)} aria-label={`Turn over the ${spread.positions[c.position].label} card`}>
+                    <button type="button" className="flip-face" disabled={i !== revealed} onClick={() => {
+                        playFlip();
+                        // The last card of the spread gets the full chime.
+                        window.setTimeout(i === reading.cards.length - 1 ? playReveal : () => buzz(10), 450);
+                        setRevealed((r) => r + 1);
+                      }} aria-label={`Turn over the ${spread.positions[c.position].label} card`}>
                       <CardBack />
                     </button>
                     <div className="flip-face flip-face-front" aria-hidden={i >= revealed}>

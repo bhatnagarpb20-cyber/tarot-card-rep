@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { BrandMark } from "@/components/ornament/Ornaments";
+import { SoundToggle } from "@/components/sound/SoundToggle";
 
 const LINKS = [
   { href: "/daily", label: "Daily card", short: "Daily" },
@@ -42,9 +43,12 @@ export function SiteNav({ signedIn }: { signedIn: boolean }) {
               ))}
             </ul>
           </nav>
-          <Link href={signedIn ? "/settings" : "/login"} className="btn btn-ghost !min-h-9 !px-4 !text-xs">
-            {signedIn ? "Account" : "Sign in"}
-          </Link>
+          <div className="flex items-center gap-2">
+            <SoundToggle />
+            <Link href={signedIn ? "/settings" : "/login"} className="btn btn-ghost !min-h-9 !px-4 !text-xs">
+              {signedIn ? "Account" : "Sign in"}
+            </Link>
+          </div>
         </div>
       </header>
       {/* Mobile tab bar: thumb-reachable primary navigation. */}

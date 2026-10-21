@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { DECK } from "@/content/cards";
 import { TarotCard } from "@/components/cards/TarotCard";
+import { Tilt } from "@/components/cards/Tilt";
 import { SectionHeading } from "@/components/ornament/Ornaments";
 import { artProgress } from "@/lib/art/registry";
 
@@ -49,7 +50,9 @@ export default async function DeckPage({ searchParams }: { searchParams: Promise
               {cards.map((c) => (
                 <li key={c.id}>
                   <Link href={`/deck/${c.id}`} className="group block text-center text-cream no-underline">
-                    <TarotCard cardId={c.id} size="fluid" />
+                    <Tilt>
+                      <TarotCard cardId={c.id} size="fluid" />
+                    </Tilt>
                     <span className="mt-2 block font-[family-name:var(--font-heading)] text-lg group-hover:text-hot">{c.name}</span>
                     <span className="block text-xs text-cream/70">{c.keywords.upright.slice(0, 2).join(" · ")}</span>
                   </Link>
