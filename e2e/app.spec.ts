@@ -86,5 +86,5 @@ test("settings, privacy and sign-in pages state their limitations honestly", asy
 
   await page.goto("/about");
   await expect(page.getByRole("heading", { name: "How cards are drawn" })).toBeVisible();
-  await expect(page.getByText(/0 of 78 illustrations are complete/)).toBeVisible();
+  await expect(page.getByText(/\d+ of 78 illustrations are complete/)).toBeVisible();
 });

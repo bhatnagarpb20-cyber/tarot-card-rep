@@ -45,7 +45,7 @@ export default function AboutPage() {
       </Section>
 
       <Section title="Artwork">
-        <p>The deck's illustrations are original artwork in a Celestial Art Nouveau style, produced card by card from a fixed illustration specification that preserves each card's traditional symbolism. {art.withImage} of {art.total} illustrations are complete. Cards without finished artwork show a clearly labelled placeholder face, never a substitute image.</p>
+        <p>The deck's illustrations are original line drawings — cobalt figures, rainbow robes and golden rays on textured paper — drawn card by card while keeping each card's traditional Rider–Waite–Smith symbolism. {art.withImage} of {art.total} illustrations are complete. Cards without finished artwork show a clearly labelled placeholder face, never a substitute image.</p>
       </Section>
 
       <Section title="Your data">

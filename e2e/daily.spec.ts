@@ -30,8 +30,8 @@ test.describe("daily ritual (guest mode)", () => {
     await expect(page.getByRole("heading", { name: "Practical next steps" })).toBeVisible();
     await expect(page.getByText("Reference reading", { exact: true })).toBeVisible();
     await expect(page.getByText("A figure looking upward; it feels hopeful.")).toBeVisible();
-    // The card face is labelled honestly while artwork is pending.
-    await expect(page.getByRole("img", { name: new RegExp(`${cardName}.*Illustration not yet available`) }).first()).toBeVisible();
+    // The card face is either finished artwork described in its label, or labelled honestly as pending.
+    await expect(page.getByRole("img", { name: new RegExp(`^${cardName}(:|\\..*Illustration not yet available)`) }).first()).toBeVisible();
 
     // AI unavailable is explained, not hidden.
     await expect(page.getByText("AI interpretation unavailable")).toBeVisible();

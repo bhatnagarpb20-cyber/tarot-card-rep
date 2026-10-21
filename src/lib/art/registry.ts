@@ -1,4 +1,5 @@
 import registry from "@/generated/card-art.json";
+import { VECTOR_ART } from "@/components/cards/art";
 
 export interface CardArt {
   alt: string;
@@ -21,7 +22,8 @@ export function artProgress(): { total: number; withImage: number; approved: num
   const entries = Object.values(REGISTRY);
   return {
     total: entries.length,
-    withImage: entries.filter((e) => e.image).length,
+    // Hand-drawn vector cards (components/cards/art) count as illustrated alongside raster art.
+    withImage: Object.entries(REGISTRY).filter(([id, e]) => e.image || id in VECTOR_ART).length,
     approved: entries.filter((e) => e.image && e.reviewStatus === "approved").length,
   };
 }

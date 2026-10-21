@@ -1,6 +1,7 @@
 import { getCard } from "@/content/cards";
 import { cardImageUrl, getCardArt } from "@/lib/art/registry";
 import { SuitEmblem } from "./SuitEmblem";
+import { VECTOR_ART } from "./art";
 import { Star } from "@/components/ornament/Ornaments";
 import type { Suit } from "@/lib/tarot/types";
 
@@ -41,12 +42,19 @@ export function TarotCard({ cardId, reversed = false, size = "md", priority = fa
   const card = getCard(cardId);
   if (!card) return null;
   const art = getCardArt(cardId);
+  const vector = VECTOR_ART[cardId];
   const orientation = reversed ? " Shown reversed (upside down)." : "";
 
   return (
     <figure className={`relative aspect-[2/3] shrink-0 ${SIZE_CLASS[size]} ${className}`}>
       <div className={`h-full w-full overflow-hidden rounded-[var(--radius-card)] shadow-[0_24px_50px_-24px_rgb(255_95_168/0.45)] ring-1 ring-cream/25 ${reversed ? "rotate-180" : ""}`}>
-        {art?.image ? (
+        {vector ? (
+          <div role="img" aria-label={`${vector.alt}${orientation}`} className="h-full w-full">
+            <div aria-hidden="true" className="h-full w-full">
+              <vector.Component />
+            </div>
+          </div>
+        ) : art?.image ? (
           <picture>
             {art.image.formats
               .filter((f) => f !== "jpg")

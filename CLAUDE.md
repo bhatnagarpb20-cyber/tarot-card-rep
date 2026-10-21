@@ -39,7 +39,8 @@ npm run art:process -- <card-id>
 - **Storage modes:** UI talks to `readingsClient(mode)` / `learningClient(mode)`; add new capabilities to both the guest and account implementations.
 - **Styling:** pages are light parchment. Use the design tokens: `page` / `page-raised` / `page-sunk` for surfaces, `ink` for text, `vermilion` for accents and links, `lapis` for focus, `gold` for rules and ornament only (`gold-ink` when gold-coloured text is needed), plus `burgundy` and `sage`. `midnight` / `indigo` are reserved for the card back and the component classes (`panel`, `panel-night`, `btn`, `btn-primary`, `btn-ghost`, `field`, `eyebrow`). Keep contrast at WCAG AA or better; the axe tests enforce it.
 - **Accessibility:** every control needs a visible label, keyboard support and visible focus. Animations must respect reduced motion (handled globally in `globals.css`). Card images need meaningful alt text from the art registry.
-- **Art:** the frame and title are composited by `scripts/art/frame.ts`; prompts must never ask the model for borders or text. Don't change `art/style-spec.json` without bumping its version (it invalidates approved art).
+- **Card art (current):** cards are hand-drawn SVG components in `src/components/cards/art/`, built only from the shared kit (`kit.tsx`: paper, rays, rainbow robes, sparkles, title) so the deck stays consistent. Register each in `art/index.ts` with full alt text; preview with `npx tsx scripts/art/preview-vector.tsx <out-dir> [card-id…]`. Art must be original — reference images found online are mood only, never traced or copied.
+- **Art (raster pipeline):** the frame and title are composited by `scripts/art/frame.ts`; prompts must never ask the model for borders or text. Don't change `art/style-spec.json` without bumping its version (it invalidates approved art).
 - **Comments:** explain *why*, briefly. Match the surrounding style.
 
 ## Environment
